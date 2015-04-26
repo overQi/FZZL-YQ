@@ -1,0 +1,124 @@
+//
+//  HP_BaseTableViewController.m
+//  缘圈
+//
+//  Created by 徐 阳 on 15/4/26.
+//  Copyright (c) 2015年 iOS. All rights reserved.
+//
+
+#import "HP_BaseTableViewController.h"
+
+@interface HP_BaseTableViewController ()
+
+@end
+
+@implementation HP_BaseTableViewController
+
+
+- (NSMutableDictionary *)dataArrayM
+{
+	if(_dataArrayM == nil)
+	{
+		_dataArrayM = [NSMutableDictionary dictionary];
+	}
+	return _dataArrayM;
+}
+
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		// Custom initialization
+	}
+	return self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+	[super didReceiveMemoryWarning];
+}
+
+// getScreenValue 获得屏幕相关数值
+-(CGRect) getScreenRect{
+	return [[UIScreen mainScreen]bounds];
+}
+
+-(CGSize) getScreenSize{
+	return [self getScreenRect].size;
+}
+
+-(CGFloat) getScreenScale{
+	return [UIScreen mainScreen].scale;
+}
+
+-(CGFloat) getScreenWidthPixels{
+	return [self getScreenScale] * [self getScreenSize].width;
+}
+
+-(CGFloat) getScreenHeightPixels{
+	return [self getScreenScale] * [self getScreenSize].height;
+}
+
+
+
+// 显示简单的alertView
+-(void)showAlertViewWithTitle:(NSString *)title alertMessage:(NSString *)msg cancelButtonTitle:(NSString *) cancelTitle otherButtonTitles:(NSString *)otherButtonTitles{
+	
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:cancelTitle otherButtonTitles:otherButtonTitles,nil];
+	[alertView show];
+}
+
+
+-(NSUserDefaults *)getNSUserDefaults{
+	return [NSUserDefaults standardUserDefaults];
+}
+
+-(void) setDictionaryForNSUserDefaults:(NSMutableDictionary *) dictionary forKey:(NSString *)key{
+	[[self getNSUserDefaults] setObject:dictionary forKey:key];
+}
+
+-(void) setObjectForNSUserDefaults:(id) object forKey:(NSString *)key{
+	[[self getNSUserDefaults] setObject:object forKey:key];
+}
+
+-(void) setStringForNSUserDefaults:(NSString *) string forKey:(NSString *)key{
+	[[self getNSUserDefaults] setObject:string forKey:key];
+}
+
+-(id) getObjectFromNSUserDefaultsForKey:(NSString *)key{
+	return [[self getNSUserDefaults] objectForKey:key];
+}
+
+-(NSString *) getStringFromNSUserDefaultsForKey:(NSString *)key{
+	return [[self getNSUserDefaults] stringForKey:key];
+}
+
+-(NSDictionary *) getDictionaryFromNSUserDefaultsForKey:(NSString *)key{
+	return [[self getNSUserDefaults] dictionaryForKey:key];
+}
+
+- (void)setArchiveObject:(id)object forKey:(NSString *)key
+{
+	NSMutableString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	path = [[path stringByAppendingPathComponent:key] mutableCopy];
+	path = [[path stringByAppendingString:@".archiver"] mutableCopy];
+	[NSKeyedArchiver archiveRootObject:object toFile:path];
+	
+}
+
+- (id)getArchivedObjectForKey:(NSString *)key
+{
+	NSMutableString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	path                  = [[path stringByAppendingPathComponent:key] mutableCopy];
+	path                  = [[path stringByAppendingString:@".archiver"] mutableCopy];
+	
+	return  [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+}
+
+
+@end
