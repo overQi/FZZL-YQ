@@ -15,7 +15,6 @@
 		741F37871AEC7ED1001A62CB /* DestinyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741F37861AEC7ED1001A62CB /* DestinyViewController.m */; };
 		741F378A1AEC8BD7001A62CB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 741F37891AEC8BD7001A62CB /* UserModel.m */; };
 		74C394601AECDC330054BAF6 /* HP_ArchiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3945F1AECDC330054BAF6 /* HP_ArchiveUtils.m */; };
-		74CD49E01AECA0A5003C9118 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49DF1AECA0A5003C9118 /* TestViewController.m */; };
 		74CD49E31AECCAC1003C9118 /* HP_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E21AECCAC1003C9118 /* HP_BaseTableViewController.m */; };
 		74CD49E71AECCC89003C9118 /* SQLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E61AECCC89003C9118 /* SQLManager.m */; };
 		74CD49EA1AECD3C1003C9118 /* HP_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E91AECD3C1003C9118 /* HP_NavigationController.m */; };
@@ -39,6 +38,8 @@
 		D9833BE41AEA3D2F0092566A /* UIImage+Common4IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = D9833BE31AEA3D2F0092566A /* UIImage+Common4IOS.m */; };
 		D9833BE71AEA3E9E0092566A /* UIColor+Common4IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = D9833BE61AEA3E9E0092566A /* UIColor+Common4IOS.m */; };
 		D9833BEA1AEA3F4A0092566A /* NSString+Common4IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = D9833BE91AEA3F4A0092566A /* NSString+Common4IOS.m */; };
+		D988D6941AEE3594000F0A39 /* MJCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D988D6911AEE3594000F0A39 /* MJCircleView.m */; };
+		D988D6951AEE3594000F0A39 /* MJLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D988D6931AEE3594000F0A39 /* MJLockView.m */; };
 		D9E1AC8E1AEA0D02006257F5 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E1AC6E1AEA0D02006257F5 /* MKAnnotationView+WebCache.m */; };
 		D9E1AC8F1AEA0D02006257F5 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E1AC701AEA0D02006257F5 /* NSData+ImageContentType.m */; };
 		D9E1AC901AEA0D02006257F5 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E1AC721AEA0D02006257F5 /* SDImageCache.m */; };
@@ -132,8 +133,6 @@
 		741F37891AEC8BD7001A62CB /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		74C3945E1AECDC330054BAF6 /* HP_ArchiveUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_ArchiveUtils.h; sourceTree = "<group>"; };
 		74C3945F1AECDC330054BAF6 /* HP_ArchiveUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_ArchiveUtils.m; sourceTree = "<group>"; };
-		74CD49DE1AECA0A5003C9118 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		74CD49DF1AECA0A5003C9118 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		74CD49E11AECCAC1003C9118 /* HP_BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_BaseTableViewController.h; sourceTree = "<group>"; };
 		74CD49E21AECCAC1003C9118 /* HP_BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_BaseTableViewController.m; sourceTree = "<group>"; };
 		74CD49E51AECCC89003C9118 /* SQLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLManager.h; sourceTree = "<group>"; };
@@ -182,6 +181,10 @@
 		D9833BE61AEA3E9E0092566A /* UIColor+Common4IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Common4IOS.m"; sourceTree = "<group>"; };
 		D9833BE81AEA3F4A0092566A /* NSString+Common4IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common4IOS.h"; sourceTree = "<group>"; };
 		D9833BE91AEA3F4A0092566A /* NSString+Common4IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common4IOS.m"; sourceTree = "<group>"; };
+		D988D6901AEE3594000F0A39 /* MJCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCircleView.h; sourceTree = "<group>"; };
+		D988D6911AEE3594000F0A39 /* MJCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCircleView.m; sourceTree = "<group>"; };
+		D988D6921AEE3594000F0A39 /* MJLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJLockView.h; sourceTree = "<group>"; };
+		D988D6931AEE3594000F0A39 /* MJLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLockView.m; sourceTree = "<group>"; };
 		D9E1AC6D1AEA0D02006257F5 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		D9E1AC6E1AEA0D02006257F5 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		D9E1AC6F1AEA0D02006257F5 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -451,6 +454,17 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D988D68F1AEE33D6000F0A39 /* 手势解锁 */ = {
+			isa = PBXGroup;
+			children = (
+				D988D6901AEE3594000F0A39 /* MJCircleView.h */,
+				D988D6911AEE3594000F0A39 /* MJCircleView.m */,
+				D988D6921AEE3594000F0A39 /* MJLockView.h */,
+				D988D6931AEE3594000F0A39 /* MJLockView.m */,
+			);
+			name = "手势解锁";
+			sourceTree = "<group>";
+		};
 		D9E1AC6C1AEA0D02006257F5 /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,10 +628,9 @@
 		D9E1AE141AEA19A8006257F5 /* 缘圈 */ = {
 			isa = PBXGroup;
 			children = (
+				D988D68F1AEE33D6000F0A39 /* 手势解锁 */,
 				741F37851AEC7ED1001A62CB /* DestinyViewController.h */,
 				741F37861AEC7ED1001A62CB /* DestinyViewController.m */,
-				74CD49DE1AECA0A5003C9118 /* TestViewController.h */,
-				74CD49DF1AECA0A5003C9118 /* TestViewController.m */,
 			);
 			name = "缘圈";
 			sourceTree = "<group>";
@@ -904,6 +917,7 @@
 				D9833BEA1AEA3F4A0092566A /* NSString+Common4IOS.m in Sources */,
 				D9E1AC9D1AEA0D02006257F5 /* UIView+WebCacheOperation.m in Sources */,
 				D9E1ADC31AEA0D5C006257F5 /* AFNetworkReachabilityManager.m in Sources */,
+				D988D6951AEE3594000F0A39 /* MJLockView.m in Sources */,
 				D9E1AC901AEA0D02006257F5 /* SDImageCache.m in Sources */,
 				D9E1AE0E1AEA0E08006257F5 /* MBProgressHUD+HP.m in Sources */,
 				D9E1ADDB1AEA0D75006257F5 /* MJConst.m in Sources */,
@@ -912,7 +926,6 @@
 				D9E1ADC81AEA0D5C006257F5 /* AFURLSessionManager.m in Sources */,
 				D9833BA61AEA20790092566A /* MJPhoto.m in Sources */,
 				D9E1AC8E1AEA0D02006257F5 /* MKAnnotationView+WebCache.m in Sources */,
-				74CD49E01AECA0A5003C9118 /* TestViewController.m in Sources */,
 				D9E1ACAD1AEA0D17006257F5 /* FMDatabaseQueue.m in Sources */,
 				D9833BDC1AEA3CBA0092566A /* HP_Reachability.m in Sources */,
 				D912BE411AEDD3D800F19108 /* FriendModel.m in Sources */,
@@ -936,6 +949,7 @@
 				D9E1ADFD1AEA0DA3006257F5 /* MJRefreshComponent.m in Sources */,
 				D9E1AC9C1AEA0D02006257F5 /* UIImageView+WebCache.m in Sources */,
 				D9E1AC911AEA0D02006257F5 /* SDWebImageCompat.m in Sources */,
+				D988D6941AEE3594000F0A39 /* MJCircleView.m in Sources */,
 				D9E1ADDD1AEA0D75006257F5 /* MJProperty.m in Sources */,
 				D9833BE71AEA3E9E0092566A /* UIColor+Common4IOS.m in Sources */,
 				D9E1ADDE1AEA0D75006257F5 /* MJType.m in Sources */,

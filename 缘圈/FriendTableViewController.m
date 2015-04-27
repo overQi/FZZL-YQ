@@ -8,9 +8,9 @@
 
 #import "FriendTableViewController.h"
 #import "FriendTableViewCell.h"
-
+@class OrderInfoModel;
 @interface FriendTableViewController ()
-
+@property (nonatomic, strong, readwrite)OrderInfoModel *orderinfomodel;
 @end
 
 @implementation FriendTableViewController
@@ -42,7 +42,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FriendTableViewCell *cell = [FriendTableViewCell cellWithTableView:tableView];
-
+    
     return cell;
     
 }
