@@ -19,6 +19,10 @@
 		74CD49E31AECCAC1003C9118 /* HP_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E21AECCAC1003C9118 /* HP_BaseTableViewController.m */; };
 		74CD49E71AECCC89003C9118 /* SQLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E61AECCC89003C9118 /* SQLManager.m */; };
 		74CD49EA1AECD3C1003C9118 /* HP_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E91AECD3C1003C9118 /* HP_NavigationController.m */; };
+		D912BE381AEDCC1400F19108 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D912BE361AEDCC1400F19108 /* FriendTableViewCell.m */; };
+		D912BE391AEDCC1400F19108 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D912BE371AEDCC1400F19108 /* FriendTableViewCell.xib */; };
+		D912BE3E1AEDCC6600F19108 /* FriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D912BE3D1AEDCC6600F19108 /* FriendTableViewController.m */; };
+		D912BE411AEDD3D800F19108 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D912BE401AEDD3D800F19108 /* FriendModel.m */; };
 		D9833BA61AEA20790092566A /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D9833B981AEA20790092566A /* MJPhoto.m */; };
 		D9833BA71AEA20790092566A /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D9833B991AEA20790092566A /* MJPhotoBrowser.bundle */; };
 		D9833BA81AEA20790092566A /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D9833B9B1AEA20790092566A /* MJPhotoBrowser.m */; };
@@ -137,6 +141,13 @@
 		74CD49E81AECD3C1003C9118 /* HP_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_NavigationController.h; sourceTree = "<group>"; };
 		74CD49E91AECD3C1003C9118 /* HP_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_NavigationController.m; sourceTree = "<group>"; };
 		74CD49EB1AECD4A9003C9118 /* DeviceMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceMacros.h; sourceTree = "<group>"; };
+		D912BE351AEDCC1400F19108 /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
+		D912BE361AEDCC1400F19108 /* FriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCell.m; sourceTree = "<group>"; };
+		D912BE371AEDCC1400F19108 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		D912BE3C1AEDCC6600F19108 /* FriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewController.h; sourceTree = "<group>"; };
+		D912BE3D1AEDCC6600F19108 /* FriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewController.m; sourceTree = "<group>"; };
+		D912BE3F1AEDD3D800F19108 /* FriendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendModel.h; sourceTree = "<group>"; };
+		D912BE401AEDD3D800F19108 /* FriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendModel.m; sourceTree = "<group>"; };
 		D9833B971AEA20790092566A /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
 		D9833B981AEA20790092566A /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
 		D9833B991AEA20790092566A /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
@@ -325,6 +336,8 @@
 			children = (
 				741F37881AEC8BD7001A62CB /* UserModel.h */,
 				741F37891AEC8BD7001A62CB /* UserModel.m */,
+				D912BE3F1AEDD3D800F19108 /* FriendModel.h */,
+				D912BE401AEDD3D800F19108 /* FriendModel.m */,
 			);
 			name = "模型";
 			sourceTree = "<group>";
@@ -346,6 +359,25 @@
 				74CD49E61AECCC89003C9118 /* SQLManager.m */,
 			);
 			name = SQLManager;
+			sourceTree = "<group>";
+		};
+		D912BE3A1AEDCC1B00F19108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D912BE351AEDCC1400F19108 /* FriendTableViewCell.h */,
+				D912BE361AEDCC1400F19108 /* FriendTableViewCell.m */,
+				D912BE371AEDCC1400F19108 /* FriendTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D912BE3B1AEDCC2A00F19108 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D912BE3C1AEDCC6600F19108 /* FriendTableViewController.h */,
+				D912BE3D1AEDCC6600F19108 /* FriendTableViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		D9833B961AEA20790092566A /* MJPhotoBrowser */ = {
@@ -593,6 +625,8 @@
 		D9E1AE151AEA19B7006257F5 /* 好友 */ = {
 			isa = PBXGroup;
 			children = (
+				D912BE3A1AEDCC1B00F19108 /* View */,
+				D912BE3B1AEDCC2A00F19108 /* Controller */,
 			);
 			name = "好友";
 			sourceTree = "<group>";
@@ -813,6 +847,7 @@
 				D9833BA71AEA20790092566A /* MJPhotoBrowser.bundle in Resources */,
 				D9F465951AEA0BF800884829 /* Main.storyboard in Resources */,
 				D9F4659A1AEA0BF800884829 /* LaunchScreen.xib in Resources */,
+				D912BE391AEDCC1400F19108 /* FriendTableViewCell.xib in Resources */,
 				D9E1AE0F1AEA0E08006257F5 /* MBProgressHUD.bundle in Resources */,
 				D9E1ADFC1AEA0DA3006257F5 /* MJRefresh.bundle in Resources */,
 				D9F465971AEA0BF800884829 /* Images.xcassets in Resources */,
@@ -880,6 +915,7 @@
 				74CD49E01AECA0A5003C9118 /* TestViewController.m in Sources */,
 				D9E1ACAD1AEA0D17006257F5 /* FMDatabaseQueue.m in Sources */,
 				D9833BDC1AEA3CBA0092566A /* HP_Reachability.m in Sources */,
+				D912BE411AEDD3D800F19108 /* FriendModel.m in Sources */,
 				D9E1AC921AEA0D02006257F5 /* SDWebImageDecoder.m in Sources */,
 				D9833BAA1AEA20790092566A /* MJPhotoProgressView.m in Sources */,
 				D9E1AC991AEA0D02006257F5 /* UIImage+MultiFormat.m in Sources */,
@@ -888,6 +924,7 @@
 				D9F4658F1AEA0BF800884829 /* AppDelegate.m in Sources */,
 				D9E1AC971AEA0D02006257F5 /* UIButton+WebCache.m in Sources */,
 				D9E1AC961AEA0D02006257F5 /* SDWebImagePrefetcher.m in Sources */,
+				D912BE381AEDCC1400F19108 /* FriendTableViewCell.m in Sources */,
 				D9E1ADC41AEA0D5C006257F5 /* AFSecurityPolicy.m in Sources */,
 				D9E1AE071AEA0DA3006257F5 /* UIView+MJExtension.m in Sources */,
 				741F37871AEC7ED1001A62CB /* DestinyViewController.m in Sources */,
@@ -909,6 +946,7 @@
 				D9E1AE061AEA0DA3006257F5 /* UIScrollView+MJRefresh.m in Sources */,
 				740E63A61AEB490E0015EFFF /* NSObject+Common4IOS_Animation.m in Sources */,
 				D9E1ADDF1AEA0D75006257F5 /* NSObject+MJCoding.m in Sources */,
+				D912BE3E1AEDCC6600F19108 /* FriendTableViewController.m in Sources */,
 				D9E1AE041AEA0DA3006257F5 /* MJRefreshLegendHeader.m in Sources */,
 				D9833BAC1AEA20790092566A /* MJPhotoView.m in Sources */,
 				D9E1ADFE1AEA0DA3006257F5 /* MJRefreshConst.m in Sources */,
@@ -1037,6 +1075,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhangzhi Wang (A8EG7M8E47)";
 				GCC_PREFIX_HEADER = "缘圈/PrefixHeader.pch";
 				INFOPLIST_FILE = "缘圈/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1048,6 +1087,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhangzhi Wang (A8EG7M8E47)";
 				GCC_PREFIX_HEADER = "缘圈/PrefixHeader.pch";
 				INFOPLIST_FILE = "缘圈/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
