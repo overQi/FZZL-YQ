@@ -15,8 +15,24 @@
 /**认证角标*/
 @property (weak, nonatomic) IBOutlet UIButton *verifyBtn;
 
-/**名称*/
+/**名称Label*/
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+/**认证状态Label*/
+@property (weak, nonatomic) IBOutlet UILabel *verifyLabel;
+
+/**年龄*/
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
+
+/**好评度*/
+@property (weak, nonatomic) IBOutlet UILabel *reputationLabel;
+
+/**居住地*/
+@property (weak, nonatomic) IBOutlet UILabel *residenceLabel;
+
+/**工作地*/
+@property (weak, nonatomic) IBOutlet UILabel *workPlaceLabel;
+
 @end
 
 
@@ -32,6 +48,7 @@
     FriendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FriendTableViewCell" owner:self options:nil]lastObject];
+
     }
     
     return cell;
