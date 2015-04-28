@@ -9,6 +9,7 @@
 #import "MJLockView.h"
 #import "MJCircleView.h"
 #import "DeviceMacros.h"
+#import "HP_Common4IOS.h"
 
 @interface MJLockView()
 @property (nonatomic, strong) NSMutableArray *selectedButtons;
@@ -61,7 +62,6 @@
         
         // 添加按钮
         [self addSubview:btn];
-        
     }
 }
 
@@ -85,7 +85,21 @@
     btnBottom.frame = CGRectMake(mainWidth/2 - btnW/2, mainHeight-btnH, btnW, btnH);
     btnRight.frame  = CGRectMake(mainWidth - btnW, mainHeight/2-btnH/2, btnW, btnH);
     
-
+    
+    // 设置默认的背景图片
+    [btnTop setBackgroundImage:[UIImage imageNamed:[NSString addPrefix:[NSDate isDayOrNight] withString:@"滑动按钮-01"]] forState:UIControlStateNormal];
+    [btnTop setBackgroundImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
+    
+    [btnLeft setBackgroundImage:[UIImage imageNamed:[NSString addPrefix:[NSDate isDayOrNight] withString:@"滑动按钮-02"]] forState:UIControlStateNormal];
+    [btnLeft setBackgroundImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
+    
+    [btnBottom setBackgroundImage:[UIImage imageNamed:[NSString addPrefix:[NSDate isDayOrNight] withString:@"滑动按钮-04"]] forState:UIControlStateNormal];
+    [btnBottom setBackgroundImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
+    
+    [btnRight setBackgroundImage:[UIImage imageNamed:[NSString addPrefix:[NSDate isDayOrNight] withString:@"滑动按钮-03"]] forState:UIControlStateNormal];
+    [btnRight setBackgroundImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
+    
+    
 }
 
 #pragma mark - 私有方法
@@ -162,6 +176,7 @@
         NSMutableString *path = [NSMutableString string];
         for (MJCircleView *btn in self.selectedButtons) {
             [path appendFormat:@"%ld", btn.tag];
+            btn.selected = NO;
         }
         [self.delegate lockView:self didFinishPath:path];
     }
@@ -172,7 +187,6 @@
     
     // 清空选中的按钮
     [self.selectedButtons removeAllObjects];
-    self.selectedButtons = nil;
     [self setNeedsDisplay];
 }
 

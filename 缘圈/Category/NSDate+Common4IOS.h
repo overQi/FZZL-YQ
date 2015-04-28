@@ -24,4 +24,6 @@
 //NSDate 类型转换为 NSTimeInterval类型
 +(NSTimeInterval) getTimeIntervalFromDate:(NSDate *)date;
 
+/**根据当前时间返回是白天或晚上:晚上18点之后算晚上*/
++(NSString *)isDayOrNight;
 @end

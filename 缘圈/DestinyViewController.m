@@ -13,11 +13,13 @@
 #import "NSObject+Common4IOS_Animation.h"
 #import "DSNavigationBar.h"
 #import "UIImage+Common4IOS.h"
+#import "NSString+Common4IOS.h"
 
 
 @interface DestinyViewController ()<BaseViewControllerDelegate,MJLockViewDelegate>
 
-@property (nonatomic, strong, readwrite)UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageInbottom;
+
 @end
 
 @implementation DestinyViewController
@@ -36,7 +38,8 @@
 #pragma mark 自定义函数
 - (void)setupUI
 {
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"背景-02"]];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: [NSString addPrefix:[NSDate isDayOrNight] withString:@"背景-02"]]];
     
     //设置导航栏样式
     UIImage *image = [UIImage getImageFromColor:[UIColor clearColor]];
@@ -47,8 +50,10 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTranslucent:YES];
-
     self.navigationController.title = @"缘圈";
+    
+    
+    
     
     
 }

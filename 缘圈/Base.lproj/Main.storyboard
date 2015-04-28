@@ -85,7 +85,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景-01" translatesAutoresizingMaskIntoConstraints="NO" id="57k-A5-H5z" userLabel="底部背景-01">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="白天背景-01" translatesAutoresizingMaskIntoConstraints="NO" id="57k-A5-H5z" userLabel="底部背景-01">
                                 <rect key="frame" x="0.0" y="411" width="320" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Kzu-lH-xSC"/>
@@ -139,6 +139,9 @@
                     <tabBarItem key="tabBarItem" title="缘圈" id="rdJ-Cz-1kW"/>
                     <navigationItem key="navigationItem" title="缘圈" id="HyO-BW-G8D"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bgImageInbottom" destination="57k-A5-H5z" id="nsq-Dv-RMw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvs-a1-Lah" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,6 +283,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="背景-01" width="640" height="217"/>
+        <image name="白天背景-01" width="640" height="217"/>
     </resources>
 </document>

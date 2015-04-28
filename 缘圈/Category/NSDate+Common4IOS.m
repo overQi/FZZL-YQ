@@ -53,4 +53,18 @@
 	
 }
 
++ (NSString *)isDayOrNight
+{
+    NSDate * newDate = [NSDate date];
+    NSDateFormatter *dateformat=[[NSDateFormatter alloc] init];
+    [dateformat setDateFormat:@"HH:mm:ss"];
+    
+    NSString * newDateOne = [dateformat stringFromDate:newDate];
+    
+    [dateformat setFormatterBehavior:NSDateFormatterFullStyle];
+    
+    [dateformat setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    NSInteger hour = [[newDateOne componentsSeparatedByString:@":"][0] integerValue];
+    return  (hour < 18?@"白天":@"夜晚");
+}
 @end
