@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSMutableArray *selectedButtons;
 @property (nonatomic, assign) CGPoint currentMovePoint;
 @property (nonatomic, assign, readwrite) NSInteger currentSelectedBtnNumber;
+
+
 @end
 
 @implementation MJLockView
@@ -50,11 +52,13 @@
  */
 - (void)setup
 {
-    self.backgroundColor = [UIColor clearColor];
+//    self.backgroundColor = [UIColor clearColor];
+    
     for (int index = 0; index<kButtonNumber; index++) {
         // 创建按钮
         MJCircleView *btn = [MJCircleView buttonWithType:UIButtonTypeCustom];
-        btn.tag = index;
+        btn.tag           = index;
+        
         // 添加按钮
         [self addSubview:btn];
         
@@ -67,20 +71,21 @@
     [super layoutSubviews];
     
     
-//    MJCircleView *btn = self.subviews[0];
-//    MJCircleView *btn = self.subviews[1];
-//    MJCircleView *btn = self.subviews[2];
-//    MJCircleView *btn = self.subviews[3];
-//    
-//    // 设置frame
-//    CGFloat btnW = kButtonSize.width;
-//    CGFloat btnH = kButtonSize.height;
-//    CGFloat btnX = marginX + col * (btnW + marginX);
-//    CGFloat btnY = row * (btnH + marginY);
-//    CGFloat marginX = (self.frame.size.width - totalColumns * btnW) / (totalColumns + 1);
-//    CGFloat marginY = marginX;
-//    
-//    btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
+    MJCircleView *btnTop    = self.subviews[0];
+    MJCircleView *btnLeft   = self.subviews[1];
+    MJCircleView *btnBottom = self.subviews[2];
+    MJCircleView *btnRight  = self.subviews[3];
+    CGFloat mainWidth  = self.frame.size.width;
+    CGFloat mainHeight = self.frame.size.height;
+    CGFloat btnW = kButtonSize.width;
+    CGFloat btnH = kButtonSize.height;
+    
+    btnTop.frame    = CGRectMake(mainWidth/2 - btnW/2, 0, btnW, btnH);
+    btnLeft.frame   = CGRectMake(0,  mainHeight/2-btnH/2, btnW, btnH);
+    btnBottom.frame = CGRectMake(mainWidth/2 - btnW/2, mainHeight-btnH, btnW, btnH);
+    btnRight.frame  = CGRectMake(mainWidth - btnW, mainHeight/2-btnH/2, btnW, btnH);
+    
+
 }
 
 #pragma mark - 私有方法
@@ -167,6 +172,7 @@
     
     // 清空选中的按钮
     [self.selectedButtons removeAllObjects];
+    self.selectedButtons = nil;
     [self setNeedsDisplay];
 }
 
@@ -208,3 +214,4 @@
 }
 
 @end
+

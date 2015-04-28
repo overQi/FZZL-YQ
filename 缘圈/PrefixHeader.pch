@@ -21,6 +21,12 @@
 #endif
 #endif
 
+//状态栏高度
+#define StateBarHeight 20
 
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define MainHeight (ScreenHeight - StateBarHeight)
+#define MainWidth ScreenWidth
 
 #endif

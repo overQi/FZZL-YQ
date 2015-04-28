@@ -103,60 +103,10 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-hX-Bcp" userLabel="LockView" customClass="MJLockView">
                                 <rect key="frame" x="10" y="114" width="300" height="300"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-fv-1p6" userLabel="工作地">
-                                        <rect key="frame" x="0.0" y="97" width="106" height="106"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="106" id="j7z-IK-KLx"/>
-                                            <constraint firstAttribute="height" constant="106" id="xhS-wI-OUf"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="白天滑动按钮-02">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RP7-h6-PMq" userLabel="故乡">
-                                        <rect key="frame" x="194" y="97" width="106" height="106"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="106" id="cSW-lA-33R"/>
-                                            <constraint firstAttribute="width" constant="106" id="ton-2x-xX8"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="白天滑动按钮-03">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fW8-pS-1pm" userLabel="目的地">
-                                        <rect key="frame" x="97" y="194" width="106" height="106"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="106" id="VQq-4o-IpY"/>
-                                            <constraint firstAttribute="height" constant="106" id="hvJ-JA-Ala"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="白天滑动按钮-04">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rR-3T-URW" userLabel="居住地">
-                                        <rect key="frame" x="97" y="0.0" width="106" height="106"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="106" id="qF6-8s-YRa"/>
-                                            <constraint firstAttribute="height" constant="106" id="u7K-Lk-QBT"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="白天滑动按钮-01">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="fW8-pS-1pm" secondAttribute="bottom" id="5s8-fw-t0R"/>
                                     <constraint firstAttribute="height" constant="640" id="9Aa-lN-PtF"/>
-                                    <constraint firstAttribute="centerY" secondItem="MKv-fv-1p6" secondAttribute="centerY" id="KQE-5R-9CS"/>
-                                    <constraint firstAttribute="centerY" secondItem="RP7-h6-PMq" secondAttribute="centerY" id="W6r-Sz-fcX"/>
                                     <constraint firstAttribute="width" secondItem="gEP-hX-Bcp" secondAttribute="height" multiplier="1:1" id="abW-Hu-tbu"/>
-                                    <constraint firstItem="9rR-3T-URW" firstAttribute="centerX" secondItem="gEP-hX-Bcp" secondAttribute="centerX" id="bDB-QR-xDi"/>
-                                    <constraint firstItem="MKv-fv-1p6" firstAttribute="leading" secondItem="gEP-hX-Bcp" secondAttribute="leading" id="iRO-cW-olz"/>
-                                    <constraint firstAttribute="centerX" secondItem="fW8-pS-1pm" secondAttribute="centerX" id="ibx-1E-m1b"/>
-                                    <constraint firstAttribute="trailing" secondItem="RP7-h6-PMq" secondAttribute="trailing" id="nXK-Pv-SBf"/>
-                                    <constraint firstItem="9rR-3T-URW" firstAttribute="top" secondItem="gEP-hX-Bcp" secondAttribute="top" id="xym-W7-eBx"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -330,10 +280,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="白天滑动按钮-01" width="214" height="209"/>
-        <image name="白天滑动按钮-02" width="213" height="207"/>
-        <image name="白天滑动按钮-03" width="215" height="207"/>
-        <image name="白天滑动按钮-04" width="214" height="214"/>
         <image name="背景-01" width="640" height="217"/>
     </resources>
 </document>

@@ -14,6 +14,7 @@
 #import "DSNavigationBar.h"
 #import "UIImage+Common4IOS.h"
 
+
 @interface DestinyViewController ()<BaseViewControllerDelegate,MJLockViewDelegate>
 
 @property (nonatomic, strong, readwrite)UILabel *titleLabel;
@@ -29,7 +30,6 @@
     [super viewDidLoad];
     
     [self setupUI];
-    
     
 }
 
@@ -49,6 +49,7 @@
     [self.navigationController.navigationBar setTranslucent:YES];
 
     self.navigationController.title = @"缘圈";
+    
     
 }
 #pragma mark 代理

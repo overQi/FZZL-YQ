@@ -34,9 +34,9 @@
 {
     // 设置按钮不可用
     self.userInteractionEnabled = NO;
-    
+  
     // 设置默认的背景图片
-    [self setBackgroundImage:[UIImage imageNamed:@"gesture_node_normal"] forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage imageNamed:@"白天滑动按钮-01"] forState:UIControlStateNormal];
     
     // 设置选中时的背景图片(selected)
     [self setBackgroundImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
