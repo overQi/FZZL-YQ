@@ -65,5 +65,6 @@
  */
 + (UIImage *)resizedImageWithName:(NSString *)name left:(float)left top:(float)top;
 
-
+/**得到一个纯色的图片*/
++ (UIImage *)getImageFromColor:(UIColor *)color;
 @end

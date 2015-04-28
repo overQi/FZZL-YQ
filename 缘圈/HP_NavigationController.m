@@ -8,6 +8,8 @@
 #import "FontMacros.h"
 #import "DeviceMacros.h"
 #import "ColorMarcros.h"
+#import "UIImage+Common4IOS.h"
+#import "ColorMarcros.h"
 
 #import "HP_NavigationController.h"
 
@@ -30,11 +32,11 @@
 {
 	//按钮
 	UIBarButtonItem *item = [UIBarButtonItem appearance];
-	if(!IOS7){
-		[item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-		[item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background_pushed"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-		[item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background_disable"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
-	}
+
+    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background_pushed"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background_disable"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
+	
 	
 	//按钮文字
 	NSMutableDictionary *attrsDisable = [NSMutableDictionary dictionary];
@@ -60,15 +62,15 @@
 {
 	UINavigationBar *navBarAppearance = [UINavigationBar appearance];
 	//背景
-	if(!IOS7){
-		[navBarAppearance setBackgroundImage:[UIImage imageNamed:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
-		[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-	}
+	
+    [navBarAppearance setBackgroundImage:[UIImage getImageFromColor:kNavigationBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+	
     [navBarAppearance setTranslucent:NO];
     
 	//标题
 	NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-	attrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+	attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
 	attrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
 	attrs[NSFontAttributeName] = kNavTitleFont;
 	[navBarAppearance setTitleTextAttributes:attrs];

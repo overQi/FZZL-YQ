@@ -12,4 +12,10 @@
 #define IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8)
 #define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
 #define IOS6 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6)
+
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define StateBarHeight 20
+#define MainHeight (ScreenHeight - StateBarHeight)
+#define MainWidth ScreenWidth
 #endif

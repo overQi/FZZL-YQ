@@ -263,6 +263,17 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect,
     return [image stretchableImageWithLeftCapWidth:image.size.width*left topCapHeight:image.size.height*top];
 }
 
++ (UIImage *)getImageFromColor:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    [color setFill];
+    UIRectFill(rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 
 @end

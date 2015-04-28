@@ -8,6 +8,7 @@
 
 #import "MJLockView.h"
 #import "MJCircleView.h"
+#import "DeviceMacros.h"
 
 @interface MJLockView()
 @property (nonatomic, strong) NSMutableArray *selectedButtons;
@@ -49,13 +50,14 @@
  */
 - (void)setup
 {
+    self.backgroundColor = [UIColor clearColor];
     for (int index = 0; index<kButtonNumber; index++) {
         // 创建按钮
         MJCircleView *btn = [MJCircleView buttonWithType:UIButtonTypeCustom];
         btn.tag = index;
         // 添加按钮
         [self addSubview:btn];
-		
+        
     }
 }
 
@@ -64,26 +66,21 @@
 {
     [super layoutSubviews];
     
-    for (int index = 0; index<self.subviews.count; index++) {
-        // 取出按钮
-        MJCircleView *btn = self.subviews[index];
-        
-        
-        
-        // 设置frame
-        CGFloat btnW = kButtonSize.width;
-		CGFloat btnH = kButtonSize.height;
-		
-        int totalColumns = kTotalColumns;
-        int col = index % totalColumns;
-        int row = index / totalColumns;
-        CGFloat marginX = (self.frame.size.width - totalColumns * btnW) / (totalColumns + 1);
-        CGFloat marginY = marginX;
-        
-        CGFloat btnX = marginX + col * (btnW + marginX);
-        CGFloat btnY = row * (btnH + marginY);
-        btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
-    }
+    
+//    MJCircleView *btn = self.subviews[0];
+//    MJCircleView *btn = self.subviews[1];
+//    MJCircleView *btn = self.subviews[2];
+//    MJCircleView *btn = self.subviews[3];
+//    
+//    // 设置frame
+//    CGFloat btnW = kButtonSize.width;
+//    CGFloat btnH = kButtonSize.height;
+//    CGFloat btnX = marginX + col * (btnW + marginX);
+//    CGFloat btnY = row * (btnH + marginY);
+//    CGFloat marginX = (self.frame.size.width - totalColumns * btnW) / (totalColumns + 1);
+//    CGFloat marginY = marginX;
+//    
+//    btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
 }
 
 #pragma mark - 私有方法
@@ -102,7 +99,7 @@
 - (MJCircleView *)buttonWithPoint:(CGPoint)point
 {
     for (MJCircleView *btn in self.subviews) {
-
+        
         if (CGRectContainsPoint(btn.frame, point)) {
             return btn;
         }
@@ -165,7 +162,7 @@
     }
     
     // 取消选中所有的按钮
-
+    
     [self.selectedButtons makeObjectsPerformSelector:@selector(setSelected:) withObject:@(NO)];
     
     // 清空选中的按钮
@@ -198,11 +195,11 @@
     
     // 连接
     if (CGPointEqualToPoint(self.currentMovePoint, CGPointZero) == NO) {
-		if( !(self.selectedButtons.count >= kMaxSelectedBtnNumber)){
-			[path addLineToPoint:self.currentMovePoint];
-		}
+        if( !(self.selectedButtons.count >= kMaxSelectedBtnNumber)){
+            [path addLineToPoint:self.currentMovePoint];
+        }
     }
-
+    
     // 绘图
     path.lineWidth = kLineWidth;
     path.lineJoinStyle = kCGLineJoinBevel;
