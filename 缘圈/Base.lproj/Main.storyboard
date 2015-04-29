@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Base Tab Bar Controller-->
@@ -101,18 +100,9 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-hX-Bcp" userLabel="LockView" customClass="MJLockView">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-hX-Bcp" userLabel="LockView" customClass="MJLockView">
                                 <rect key="frame" x="10" y="109" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="640" id="9Aa-lN-PtF"/>
-                                    <constraint firstAttribute="width" secondItem="gEP-hX-Bcp" secondAttribute="height" multiplier="1:1" id="abW-Hu-tbu"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9Aa-lN-PtF"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="N5y-zC-UND" id="3IW-5h-3Qm"/>
                                 </connections>
@@ -131,7 +121,10 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="TBe-rO-DcP"/>
+                                <exclude reference="ajm-AW-FDp"/>
                                 <exclude reference="Jks-sh-XFu"/>
+                                <exclude reference="EhT-wJ-xTc"/>
                                 <exclude reference="sTj-hs-lDR"/>
                             </mask>
                         </variation>
@@ -141,6 +134,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bgImageInbottom" destination="57k-A5-H5z" id="nsq-Dv-RMw"/>
+                        <outlet property="lockView" destination="gEP-hX-Bcp" id="Z7w-5e-aFe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvs-a1-Lah" userLabel="First Responder" sceneMemberID="firstResponder"/>

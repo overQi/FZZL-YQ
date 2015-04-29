@@ -17,6 +17,7 @@
 
 
 @interface DestinyViewController ()<BaseViewControllerDelegate,MJLockViewDelegate>
+@property (strong, nonatomic) IBOutlet MJLockView *lockView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageInbottom;
 
@@ -51,6 +52,8 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTranslucent:YES];
     self.navigationController.title = @"缘圈";
+    
+    self.lockView.frame = CGRectMake(10, MainHeight/2-MainWidth/2, MainWidth-20, MainWidth-20);
 
     
 }

@@ -9,9 +9,8 @@
 #define kButtonNumber				4	//按钮数量
 #define kTotalColumns				2	//列数
 #define kMaxSelectedBtnNumber		2	//最大被选中按钮数
-#define kLineWidth					8	//线宽
 #define kLineColor [UIColor colorWithRed:32/255.0 green:210/255.0 blue:254/255.0 alpha:0.5]
-#define kButtonSize CGSizeMake(130 , 130)//按钮宽高
+
 #import <UIKit/UIKit.h>
 @class MJLockView;
 

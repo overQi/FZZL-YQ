@@ -60,11 +60,13 @@
         // 创建按钮
         MJCircleView *btn = [MJCircleView buttonWithType:UIButtonTypeCustom];
         btn.tag           = index;
-        
         // 添加按钮
         [self addSubview:btn];
+        
     }
 }
+
+
 
 
 - (void)layoutSubviews
@@ -100,7 +102,7 @@
     [btnRight setBackgroundImage:[UIImage imageNamed:[NSString addPrefix:[NSDate isDayOrNight] withString:@"滑动按钮-03"]] forState:UIControlStateNormal];
     [btnRight setBackgroundImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
     
-    
+
 }
 
 #pragma mark - 私有方法
@@ -232,7 +234,7 @@
     }
     
     // 绘图
-    path.lineWidth = kLineWidth;
+    path.lineWidth = MainWidth/3/10;
     path.lineJoinStyle = kCGLineJoinBevel;
     [kLineColor set];
     [path stroke];
