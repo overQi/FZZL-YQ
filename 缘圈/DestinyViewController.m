@@ -51,10 +51,7 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTranslucent:YES];
     self.navigationController.title = @"缘圈";
-    
-    
-    
-    
+
     
 }
 #pragma mark 代理

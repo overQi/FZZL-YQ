@@ -18,6 +18,7 @@
 		74CD49E31AECCAC1003C9118 /* HP_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E21AECCAC1003C9118 /* HP_BaseTableViewController.m */; };
 		74CD49E71AECCC89003C9118 /* SQLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E61AECCC89003C9118 /* SQLManager.m */; };
 		74CD49EA1AECD3C1003C9118 /* HP_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E91AECD3C1003C9118 /* HP_NavigationController.m */; };
+		D9031E111AF068CD008F4051 /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D9031E101AF068CD008F4051 /* AFViewShaker.m */; };
 		D910D2D71AEF50D30006895E /* DSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D910D2D61AEF50D30006895E /* DSNavigationBar.m */; };
 		D912BE381AEDCC1400F19108 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D912BE361AEDCC1400F19108 /* FriendTableViewCell.m */; };
 		D912BE391AEDCC1400F19108 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D912BE371AEDCC1400F19108 /* FriendTableViewCell.xib */; };
@@ -141,6 +142,8 @@
 		74CD49E81AECD3C1003C9118 /* HP_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_NavigationController.h; sourceTree = "<group>"; };
 		74CD49E91AECD3C1003C9118 /* HP_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_NavigationController.m; sourceTree = "<group>"; };
 		74CD49EB1AECD4A9003C9118 /* DeviceMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceMacros.h; sourceTree = "<group>"; };
+		D9031E0F1AF068CD008F4051 /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewShaker.h; sourceTree = "<group>"; };
+		D9031E101AF068CD008F4051 /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewShaker.m; sourceTree = "<group>"; };
 		D910D2D51AEF50D30006895E /* DSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSNavigationBar.h; sourceTree = "<group>"; };
 		D910D2D61AEF50D30006895E /* DSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSNavigationBar.m; sourceTree = "<group>"; };
 		D912BE351AEDCC1400F19108 /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
@@ -365,6 +368,15 @@
 				74CD49E61AECCC89003C9118 /* SQLManager.m */,
 			);
 			name = SQLManager;
+			sourceTree = "<group>";
+		};
+		D9031E0E1AF068CD008F4051 /* AFViewShaker */ = {
+			isa = PBXGroup;
+			children = (
+				D9031E0F1AF068CD008F4051 /* AFViewShaker.h */,
+				D9031E101AF068CD008F4051 /* AFViewShaker.m */,
+			);
+			path = AFViewShaker;
 			sourceTree = "<group>";
 		};
 		D912BE3A1AEDCC1B00F19108 /* View */ = {
@@ -771,6 +783,7 @@
 		D9F465B11AEA0C2300884829 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				D9031E0E1AF068CD008F4051 /* AFViewShaker */,
 				D9833B961AEA20790092566A /* MJPhotoBrowser */,
 				D9E1AE081AEA0E08006257F5 /* MBProgressHUD */,
 				D9E1ADE31AEA0DA2006257F5 /* MJRefresh */,
@@ -912,6 +925,7 @@
 				D9833BD71AEA3CBA0092566A /* HP_JSONUtils.m in Sources */,
 				D910D2D71AEF50D30006895E /* DSNavigationBar.m in Sources */,
 				D9E1ADDC1AEA0D75006257F5 /* MJFoundation.m in Sources */,
+				D9031E111AF068CD008F4051 /* AFViewShaker.m in Sources */,
 				740E63AC1AEB4B7F0015EFFF /* HP_BaseViewController.m in Sources */,
 				D9E1ACAE1AEA0D17006257F5 /* FMResultSet.m in Sources */,
 				D9E1ACAB1AEA0D17006257F5 /* FMDatabaseAdditions.m in Sources */,

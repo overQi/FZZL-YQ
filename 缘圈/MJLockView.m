@@ -10,6 +10,7 @@
 #import "MJCircleView.h"
 #import "DeviceMacros.h"
 #import "HP_Common4IOS.h"
+#import "AFViewShaker.h"
 
 @interface MJLockView()
 @property (nonatomic, strong) NSMutableArray *selectedButtons;
@@ -77,8 +78,8 @@
     MJCircleView *btnRight  = self.subviews[3];
     CGFloat mainWidth  = self.frame.size.width;
     CGFloat mainHeight = self.frame.size.height;
-    CGFloat btnW = kButtonSize.width;
-    CGFloat btnH = kButtonSize.height;
+    CGFloat btnW = MainWidth/3;
+    CGFloat btnH = btnW;
     
     btnTop.frame    = CGRectMake(mainWidth/2 - btnW/2, 0, btnW, btnH);
     btnLeft.frame   = CGRectMake(0,  mainHeight/2-btnH/2, btnW, btnH);
@@ -171,9 +172,19 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // 通知代理
-    if ([self.delegate respondsToSelector:@selector(lockView:didFinishPath:)]) {
+    
+    if(self.selectedButtons && self.selectedButtons.count == 1)
+    {
+        //如果只是单击了一个则什么也不做
+        MJCircleView *btn = (MJCircleView *)self.selectedButtons[0];
+        btn.selected = NO;
+        [[[AFViewShaker alloc] initWithView:btn] shake];
+        
+    }else if ([self.delegate respondsToSelector:@selector(lockView:didFinishPath:)]) {
+        //如果连接了2个
+        
         NSMutableString *path = [NSMutableString string];
+        
         for (MJCircleView *btn in self.selectedButtons) {
             [path appendFormat:@"%ld", btn.tag];
             btn.selected = NO;

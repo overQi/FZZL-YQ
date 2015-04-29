@@ -102,7 +102,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-hX-Bcp" userLabel="LockView" customClass="MJLockView">
-                                <rect key="frame" x="10" y="114" width="300" height="300"/>
+                                <rect key="frame" x="10" y="109" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="640" id="9Aa-lN-PtF"/>
@@ -120,7 +120,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UOk-HQ-2Li" firstAttribute="top" secondItem="gEP-hX-Bcp" secondAttribute="bottom" constant="105" id="EhT-wJ-xTc"/>
+                            <constraint firstItem="UOk-HQ-2Li" firstAttribute="top" secondItem="gEP-hX-Bcp" secondAttribute="bottom" constant="110" id="EhT-wJ-xTc"/>
                             <constraint firstAttribute="centerX" secondItem="57k-A5-H5z" secondAttribute="centerX" id="Jks-sh-XFu"/>
                             <constraint firstItem="gEP-hX-Bcp" firstAttribute="width" secondItem="hJr-mA-osG" secondAttribute="width" constant="-20" id="TBe-rO-DcP"/>
                             <constraint firstAttribute="centerX" secondItem="57k-A5-H5z" secondAttribute="centerX" id="Twq-vn-vYz"/>
