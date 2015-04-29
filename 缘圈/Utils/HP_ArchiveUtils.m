@@ -9,7 +9,7 @@
 #import "HP_ArchiveUtils.h"
 
 @implementation HP_ArchiveUtils
-+ (void)setArchiveObject:(id)object forKey:(NSString *)key
++ (void)setArchiveObject:(id<NSCoding>)object forKey:(NSString *)key
 {
 	NSMutableString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 	path = [[path stringByAppendingPathComponent:key] mutableCopy];

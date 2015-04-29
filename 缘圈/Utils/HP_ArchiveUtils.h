@@ -10,7 +10,7 @@
 
 @interface HP_ArchiveUtils : NSObject
 /**向NSKeyedUnarchiver存入对象*/
-+ (void)setArchiveObject:(id)object forKey:(NSString *)key;
++ (void)setArchiveObject:(id<NSCoding>)object forKey:(NSString *)key;
 
 /**从NSKeyedUnarchiver获取对象*/
 + (id)getArchivedObjectForKey:(NSString *)key;

@@ -12,5 +12,5 @@
 //颜色设置
 #define kColor(r, g, b, a)     [UIColor colorWithRed:(r)/256.0 green:(g)/256.0 blue:(b)/256.0 alpha:(a)/1.0]
 #define kNavigationBackgroundColor [UIColor colorWithRed:0.285 green:0.523 blue:0.964 alpha:1.00]
-
+#define kYuanQuanBtnTextColor      [UIColor colorWithRed:0.934 green:0.618 blue:0.246 alpha:1.000]
 #endif

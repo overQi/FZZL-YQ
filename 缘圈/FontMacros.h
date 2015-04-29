@@ -12,4 +12,5 @@
 //字体设置
 #define kNavTitleFont [UIFont systemFontOfSize:16]
 #define kNavButtonFont [UIFont systemFontOfSize:14]
+#define kYuanQuanBtnFont  [UIFont boldSystemFontOfSize:12]
 #endif

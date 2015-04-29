@@ -7,7 +7,6 @@
 //
 
 #import "MJLockView.h"
-#import "MJCircleView.h"
 #import "DeviceMacros.h"
 #import "HP_Common4IOS.h"
 #import "AFViewShaker.h"
@@ -23,6 +22,7 @@
 @implementation MJLockView
 
 #pragma mark - 初始化
+
 - (NSMutableArray *)selectedButtons
 {
     if (_selectedButtons == nil) {
@@ -54,30 +54,44 @@
  */
 - (void)setup
 {
-//    self.backgroundColor = [UIColor clearColor];
-    
     for (int index = 0; index<kButtonNumber; index++) {
         // 创建按钮
         MJCircleView *btn = [MJCircleView buttonWithType:UIButtonTypeCustom];
         btn.tag           = index;
+        
         // 添加按钮
         [self addSubview:btn];
+        switch (index) {
+            case 0:
+                self.btnTop = btn;
+                break;
+            case 1:
+                self.btnLeft = btn;
+                break;
+            case 2:
+                self.btnBottom = btn;
+                break;
+            case 3:
+                self.btnRight = btn;
+                break;
+            default:
+                FZ_LOG(@"MJLockView:setup出错");
+                break;
+        }
         
     }
 }
-
-
-
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
     
-    MJCircleView *btnTop    = self.subviews[0];
-    MJCircleView *btnLeft   = self.subviews[1];
-    MJCircleView *btnBottom = self.subviews[2];
-    MJCircleView *btnRight  = self.subviews[3];
+    MJCircleView *btnTop    = self.btnTop;
+    MJCircleView *btnLeft   = self.btnLeft;
+    MJCircleView *btnBottom = self.btnBottom;
+    MJCircleView *btnRight  = self.btnRight;
+    
     CGFloat mainWidth  = self.frame.size.width;
     CGFloat mainHeight = self.frame.size.height;
     CGFloat btnW = MainWidth/3;
@@ -102,7 +116,6 @@
     [btnRight setBackgroundImage:[UIImage imageNamed:[NSString addPrefix:[NSDate isDayOrNight] withString:@"滑动按钮-03"]] forState:UIControlStateNormal];
     [btnRight setBackgroundImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
     
-
 }
 
 #pragma mark - 私有方法

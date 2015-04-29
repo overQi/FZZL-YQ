@@ -29,7 +29,6 @@
 	//默认选中第1个控制器
     tab.selectedViewController = tab.viewControllers[1];
  
-    
     return YES;
 }
 

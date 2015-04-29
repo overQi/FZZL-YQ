@@ -9,11 +9,11 @@
 #import "DestinyViewController.h"
 #import "UserModel.h"
 #import "MJLockView.h"
-#import "HP_Common4IOS.h"
-#import "NSObject+Common4IOS_Animation.h"
+#import "MJCircleView.h"
 #import "DSNavigationBar.h"
-#import "UIImage+Common4IOS.h"
-#import "NSString+Common4IOS.h"
+#import "SelectMapViewController.h"
+#import "HP_NavigationController.h"
+
 
 
 @interface DestinyViewController ()<BaseViewControllerDelegate,MJLockViewDelegate>
@@ -33,13 +33,12 @@
     [super viewDidLoad];
     
     [self setupUI];
-    
+    [self setupData];
 }
 
 #pragma mark 自定义函数
 - (void)setupUI
 {
-    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: [NSString addPrefix:[NSDate isDayOrNight] withString:@"背景-02"]]];
     
     //设置导航栏样式
@@ -55,12 +54,28 @@
     
     self.lockView.frame = CGRectMake(10, MainHeight/2-MainWidth/2, MainWidth-20, MainWidth-20);
 
-    
+       
 }
+
+- (void)setupData
+{
+    [self.lockView.btnTop setTitle:@"居住地" forState:UIControlStateNormal];
+    [self.lockView.btnLeft setTitle:@"工作地" forState:UIControlStateNormal];
+    [self.lockView.btnBottom setTitle:@"目的地" forState:UIControlStateNormal];
+    [self.lockView.btnRight setTitle:@"故乡" forState:UIControlStateNormal];
+}
+
 #pragma mark 代理
 - (void)lockView:(MJLockView *)lockView didFinishPath:(NSString *)path
 {
-    FZ_LOG(@"%@",path);
+    if( [path rangeOfString:@"2"].location != NSNotFound)
+    {
+        SelectMapViewController *vc = [[SelectMapViewController alloc] init];
+        HP_NavigationController *nav = [[HP_NavigationController alloc] initWithRootViewController:vc];
+        [self.navigationController presentViewController:nav animated:YES completion:^{
+            
+        }];
+    }
 }
 
 

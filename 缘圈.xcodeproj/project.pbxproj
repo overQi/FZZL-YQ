@@ -42,6 +42,11 @@
 		D9833BEA1AEA3F4A0092566A /* NSString+Common4IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = D9833BE91AEA3F4A0092566A /* NSString+Common4IOS.m */; };
 		D988D6941AEE3594000F0A39 /* MJCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D988D6911AEE3594000F0A39 /* MJCircleView.m */; };
 		D988D6951AEE3594000F0A39 /* MJLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D988D6931AEE3594000F0A39 /* MJLockView.m */; };
+		D98C2DFA1AF0A5B7005B2226 /* SelectMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C2DF91AF0A5B7005B2226 /* SelectMapViewController.m */; };
+		D98C2DFC1AF0B3AA005B2226 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98C2DFB1AF0B3AA005B2226 /* MapKit.framework */; };
+		D98C2DFE1AF0B3B9005B2226 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98C2DFD1AF0B3B9005B2226 /* CoreGraphics.framework */; };
+		D98C2E001AF0B3C7005B2226 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98C2DFF1AF0B3C7005B2226 /* CoreLocation.framework */; };
+		D98C2E041AF0BD87005B2226 /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C2E031AF0BD87005B2226 /* DXPopover.m */; };
 		D9E1AC8E1AEA0D02006257F5 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E1AC6E1AEA0D02006257F5 /* MKAnnotationView+WebCache.m */; };
 		D9E1AC8F1AEA0D02006257F5 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E1AC701AEA0D02006257F5 /* NSData+ImageContentType.m */; };
 		D9E1AC901AEA0D02006257F5 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E1AC721AEA0D02006257F5 /* SDImageCache.m */; };
@@ -191,6 +196,13 @@
 		D988D6911AEE3594000F0A39 /* MJCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCircleView.m; sourceTree = "<group>"; };
 		D988D6921AEE3594000F0A39 /* MJLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJLockView.h; sourceTree = "<group>"; };
 		D988D6931AEE3594000F0A39 /* MJLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLockView.m; sourceTree = "<group>"; };
+		D98C2DF81AF0A5B7005B2226 /* SelectMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectMapViewController.h; sourceTree = "<group>"; };
+		D98C2DF91AF0A5B7005B2226 /* SelectMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectMapViewController.m; sourceTree = "<group>"; };
+		D98C2DFB1AF0B3AA005B2226 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D98C2DFD1AF0B3B9005B2226 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D98C2DFF1AF0B3C7005B2226 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D98C2E021AF0BD87005B2226 /* DXPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPopover.h; sourceTree = "<group>"; };
+		D98C2E031AF0BD87005B2226 /* DXPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPopover.m; sourceTree = "<group>"; };
 		D9E1AC6D1AEA0D02006257F5 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		D9E1AC6E1AEA0D02006257F5 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		D9E1AC6F1AEA0D02006257F5 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -326,6 +338,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98C2E001AF0B3C7005B2226 /* CoreLocation.framework in Frameworks */,
+				D98C2DFE1AF0B3B9005B2226 /* CoreGraphics.framework in Frameworks */,
+				D98C2DFC1AF0B3AA005B2226 /* MapKit.framework in Frameworks */,
 				D9E1AE121AEA0E53006257F5 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +495,24 @@
 				D988D6931AEE3594000F0A39 /* MJLockView.m */,
 			);
 			name = "手势解锁";
+			sourceTree = "<group>";
+		};
+		D98C2DF71AF0A563005B2226 /* 地图选择 */ = {
+			isa = PBXGroup;
+			children = (
+				D98C2DF81AF0A5B7005B2226 /* SelectMapViewController.h */,
+				D98C2DF91AF0A5B7005B2226 /* SelectMapViewController.m */,
+			);
+			name = "地图选择";
+			sourceTree = "<group>";
+		};
+		D98C2E011AF0BD87005B2226 /* DXPopover */ = {
+			isa = PBXGroup;
+			children = (
+				D98C2E021AF0BD87005B2226 /* DXPopover.h */,
+				D98C2E031AF0BD87005B2226 /* DXPopover.m */,
+			);
+			path = DXPopover;
 			sourceTree = "<group>";
 		};
 		D9E1AC6C1AEA0D02006257F5 /* SDWebImage */ = {
@@ -693,6 +726,9 @@
 		D9F4657D1AEA0BF700884829 = {
 			isa = PBXGroup;
 			children = (
+				D98C2DFF1AF0B3C7005B2226 /* CoreLocation.framework */,
+				D98C2DFD1AF0B3B9005B2226 /* CoreGraphics.framework */,
+				D98C2DFB1AF0B3AA005B2226 /* MapKit.framework */,
 				D9E1AE111AEA0E53006257F5 /* libsqlite3.dylib */,
 				D9F465881AEA0BF800884829 /* 缘圈 */,
 				D9F465A21AEA0BF800884829 /* 缘圈Tests */,
@@ -758,6 +794,7 @@
 				D9E1AE141AEA19A8006257F5 /* 缘圈 */,
 				D9E1AE151AEA19B7006257F5 /* 好友 */,
 				D9E1AE161AEA19C6006257F5 /* 我的 */,
+				D98C2DF71AF0A563005B2226 /* 地图选择 */,
 				D9F465B01AEA0C1200884829 /* Main */,
 			);
 			name = Classes;
@@ -783,6 +820,7 @@
 		D9F465B11AEA0C2300884829 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				D98C2E011AF0BD87005B2226 /* DXPopover */,
 				D9031E0E1AF068CD008F4051 /* AFViewShaker */,
 				D9833B961AEA20790092566A /* MJPhotoBrowser */,
 				D9E1AE081AEA0E08006257F5 /* MBProgressHUD */,
@@ -900,6 +938,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74CD49E31AECCAC1003C9118 /* HP_BaseTableViewController.m in Sources */,
+				D98C2E041AF0BD87005B2226 /* DXPopover.m in Sources */,
 				D9E1ADC61AEA0D5C006257F5 /* AFURLRequestSerialization.m in Sources */,
 				D9E1AE021AEA0DA3006257F5 /* MJRefreshHeader.m in Sources */,
 				D9833BAD1AEA20790092566A /* SDWebImageManager+MJ.m in Sources */,
@@ -980,6 +1019,7 @@
 				D9E1AE061AEA0DA3006257F5 /* UIScrollView+MJRefresh.m in Sources */,
 				740E63A61AEB490E0015EFFF /* NSObject+Common4IOS_Animation.m in Sources */,
 				D9E1ADDF1AEA0D75006257F5 /* NSObject+MJCoding.m in Sources */,
+				D98C2DFA1AF0A5B7005B2226 /* SelectMapViewController.m in Sources */,
 				D912BE3E1AEDCC6600F19108 /* FriendTableViewController.m in Sources */,
 				D9E1AE041AEA0DA3006257F5 /* MJRefreshLegendHeader.m in Sources */,
 				D9833BAC1AEA20790092566A /* MJPhotoView.m in Sources */,

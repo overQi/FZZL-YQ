@@ -52,7 +52,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMn-ow-hUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="-425"/>
+            <point key="canvasLocation" x="1558" y="-425"/>
         </scene>
         <!--缘圈-->
         <scene sceneID="GT4-FT-Obf">
@@ -232,30 +232,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHI-c5-kXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1575" y="1329"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ZpG-WF-RhM">
-            <objects>
-                <viewController id="qgT-Fb-ntY" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bYL-jF-JNn"/>
-                        <viewControllerLayoutGuide type="bottom" id="fJf-gt-ac6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DtP-kb-bWa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZPB-c3-Wte">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ypd-Yu-H6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="554" y="1160"/>
         </scene>
         <!--我的-->
         <scene sceneID="7Ff-ly-9fl">

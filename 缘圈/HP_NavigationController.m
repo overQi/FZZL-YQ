@@ -70,8 +70,8 @@
     
 	//标题
 	NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-	attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
-	attrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
+    attrs[NSForegroundColorAttributeName]  = [UIColor whiteColor];
+    attrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
 	attrs[NSFontAttributeName] = kNavTitleFont;
 	[navBarAppearance setTitleTextAttributes:attrs];
 	

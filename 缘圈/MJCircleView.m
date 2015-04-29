@@ -32,14 +32,18 @@
  */
 - (void)setup
 {
+    
     // 设置按钮不可用
     self.userInteractionEnabled = NO;
-  
-//    // 设置默认的背景图片
-//    [self setBackgroundImage:[UIImage imageNamed:@"白天滑动按钮-01"] forState:UIControlStateNormal];
-//    
-//    // 设置选中时的背景图片(selected)
-//    [self setBackgroundImage:[UIImage imageNamed:@"gesture_node_highlighted"] forState:UIControlStateSelected];
+    [self setTitleColor:kYuanQuanBtnTextColor forState:UIControlStateNormal];
+    self.titleLabel.font          = kYuanQuanBtnFont;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+
+}
+
+- (CGRect)titleRectForContentRect:(CGRect)contentRect
+{
+    return CGRectMake(0, contentRect.size.height - 38, contentRect.size.width, 20);
 }
 
 @end

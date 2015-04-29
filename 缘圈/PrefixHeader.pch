@@ -29,4 +29,9 @@
 #define MainHeight (ScreenHeight - StateBarHeight)
 #define MainWidth ScreenWidth
 
+#import "HP_Common4IOS.h"
+#import "FontMacros.h"
+#import "ColorMarcros.h"
+#import "FrameMarcros.h"
+#import "DeviceMacros.h"
 #endif

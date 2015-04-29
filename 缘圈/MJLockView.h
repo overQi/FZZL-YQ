@@ -12,7 +12,9 @@
 #define kLineColor [UIColor colorWithRed:32/255.0 green:210/255.0 blue:254/255.0 alpha:0.5]
 
 #import <UIKit/UIKit.h>
-@class MJLockView;
+#import "MJCircleView.h"
+
+@class MJLockView,MJCircleView;
 
 @protocol MJLockViewDelegate <NSObject>
 
@@ -22,7 +24,10 @@
 @end
 
 @interface MJLockView : UIView
-
+@property (nonatomic, strong, readwrite)MJCircleView *btnTop;
+@property (nonatomic, strong, readwrite)MJCircleView *btnLeft;
+@property (nonatomic, strong, readwrite)MJCircleView *btnBottom;
+@property (nonatomic, strong, readwrite)MJCircleView *btnRight;
 
 @property (nonatomic, weak) IBOutlet id<MJLockViewDelegate> delegate;
 @end
