@@ -35,7 +35,13 @@
     
     // 设置按钮不可用
     self.userInteractionEnabled = NO;
-    [self setTitleColor:kYuanQuanBtnTextColor forState:UIControlStateNormal];
+	if([[NSDate isDayOrNight] isEqualToString:@"白天"])
+	{
+		[self setTitleColor:kYuanQuanBtnTextDayColor forState:UIControlStateNormal];
+	}else{
+		[self setTitleColor:kYuanQuanBtnTextNightColor forState:UIControlStateNormal];
+	}
+	
     self.titleLabel.font          = kYuanQuanBtnFont;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
 

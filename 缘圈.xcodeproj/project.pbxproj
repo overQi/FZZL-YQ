@@ -19,7 +19,6 @@
 		74CD49E71AECCC89003C9118 /* SQLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E61AECCC89003C9118 /* SQLManager.m */; };
 		74CD49EA1AECD3C1003C9118 /* HP_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E91AECD3C1003C9118 /* HP_NavigationController.m */; };
 		D9031E111AF068CD008F4051 /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D9031E101AF068CD008F4051 /* AFViewShaker.m */; };
-		D910D2D71AEF50D30006895E /* DSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D910D2D61AEF50D30006895E /* DSNavigationBar.m */; };
 		D912BE381AEDCC1400F19108 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D912BE361AEDCC1400F19108 /* FriendTableViewCell.m */; };
 		D912BE391AEDCC1400F19108 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D912BE371AEDCC1400F19108 /* FriendTableViewCell.xib */; };
 		D912BE3E1AEDCC6600F19108 /* FriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D912BE3D1AEDCC6600F19108 /* FriendTableViewController.m */; };
@@ -149,8 +148,6 @@
 		74CD49EB1AECD4A9003C9118 /* DeviceMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceMacros.h; sourceTree = "<group>"; };
 		D9031E0F1AF068CD008F4051 /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewShaker.h; sourceTree = "<group>"; };
 		D9031E101AF068CD008F4051 /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewShaker.m; sourceTree = "<group>"; };
-		D910D2D51AEF50D30006895E /* DSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSNavigationBar.h; sourceTree = "<group>"; };
-		D910D2D61AEF50D30006895E /* DSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSNavigationBar.m; sourceTree = "<group>"; };
 		D912BE351AEDCC1400F19108 /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
 		D912BE361AEDCC1400F19108 /* FriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCell.m; sourceTree = "<group>"; };
 		D912BE371AEDCC1400F19108 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
@@ -484,17 +481,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		D988D68F1AEE33D6000F0A39 /* 手势解锁 */ = {
+		D988D68F1AEE33D6000F0A39 /* 滑动连线View */ = {
 			isa = PBXGroup;
 			children = (
-				D910D2D51AEF50D30006895E /* DSNavigationBar.h */,
-				D910D2D61AEF50D30006895E /* DSNavigationBar.m */,
 				D988D6901AEE3594000F0A39 /* MJCircleView.h */,
 				D988D6911AEE3594000F0A39 /* MJCircleView.m */,
 				D988D6921AEE3594000F0A39 /* MJLockView.h */,
 				D988D6931AEE3594000F0A39 /* MJLockView.m */,
 			);
-			name = "手势解锁";
+			name = "滑动连线View";
 			sourceTree = "<group>";
 		};
 		D98C2DF71AF0A563005B2226 /* 地图选择 */ = {
@@ -678,7 +673,7 @@
 		D9E1AE141AEA19A8006257F5 /* 缘圈 */ = {
 			isa = PBXGroup;
 			children = (
-				D988D68F1AEE33D6000F0A39 /* 手势解锁 */,
+				D988D68F1AEE33D6000F0A39 /* 滑动连线View */,
 				741F37851AEC7ED1001A62CB /* DestinyViewController.h */,
 				741F37861AEC7ED1001A62CB /* DestinyViewController.m */,
 			);
@@ -962,7 +957,6 @@
 				D9E1AE101AEA0E08006257F5 /* MBProgressHUD.m in Sources */,
 				D9E1AE001AEA0DA3006257F5 /* MJRefreshGifFooter.m in Sources */,
 				D9833BD71AEA3CBA0092566A /* HP_JSONUtils.m in Sources */,
-				D910D2D71AEF50D30006895E /* DSNavigationBar.m in Sources */,
 				D9E1ADDC1AEA0D75006257F5 /* MJFoundation.m in Sources */,
 				D9031E111AF068CD008F4051 /* AFViewShaker.m in Sources */,
 				740E63AC1AEB4B7F0015EFFF /* HP_BaseViewController.m in Sources */,

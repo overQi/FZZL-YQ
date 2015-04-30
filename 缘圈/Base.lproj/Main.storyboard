@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kkh-32-VxS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kkh-32-VxS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Base Tab Bar Controller-->
@@ -112,17 +112,21 @@
                         <constraints>
                             <constraint firstItem="UOk-HQ-2Li" firstAttribute="top" secondItem="gEP-hX-Bcp" secondAttribute="bottom" constant="110" id="EhT-wJ-xTc"/>
                             <constraint firstAttribute="centerX" secondItem="57k-A5-H5z" secondAttribute="centerX" id="Jks-sh-XFu"/>
+                            <constraint firstAttribute="centerX" secondItem="gEP-hX-Bcp" secondAttribute="centerX" id="Qf1-3L-Vdl"/>
                             <constraint firstItem="gEP-hX-Bcp" firstAttribute="width" secondItem="hJr-mA-osG" secondAttribute="width" constant="-20" id="TBe-rO-DcP"/>
                             <constraint firstAttribute="centerX" secondItem="57k-A5-H5z" secondAttribute="centerX" id="Twq-vn-vYz"/>
                             <constraint firstAttribute="centerX" secondItem="gEP-hX-Bcp" secondAttribute="centerX" id="ajm-AW-FDp"/>
                             <constraint firstItem="57k-A5-H5z" firstAttribute="width" secondItem="hJr-mA-osG" secondAttribute="width" id="cLV-pP-sSp"/>
+                            <constraint firstAttribute="centerY" secondItem="gEP-hX-Bcp" secondAttribute="centerY" id="k12-eX-JVO"/>
                             <constraint firstItem="UOk-HQ-2Li" firstAttribute="top" secondItem="57k-A5-H5z" secondAttribute="bottom" constant="8" id="sTj-hs-lDR"/>
                             <constraint firstItem="57k-A5-H5z" firstAttribute="bottom" secondItem="UOk-HQ-2Li" secondAttribute="top" id="y4y-9V-sZv"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Qf1-3L-Vdl"/>
                                 <exclude reference="TBe-rO-DcP"/>
                                 <exclude reference="ajm-AW-FDp"/>
+                                <exclude reference="k12-eX-JVO"/>
                                 <exclude reference="Jks-sh-XFu"/>
                                 <exclude reference="EhT-wJ-xTc"/>
                                 <exclude reference="sTj-hs-lDR"/>
