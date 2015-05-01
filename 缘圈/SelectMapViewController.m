@@ -14,32 +14,21 @@
 
 
 @interface SelectMapViewController ()<UISearchBarDelegate,MKMapViewDelegate,CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong, readwrite) UISearchBar *searchBar;
+
+@property (nonatomic, strong, readwrite) IBOutlet UISearchBar       *searchBar;
 @property (nonatomic, strong, readwrite) CLLocationManager *locationMgr;
-@property (nonatomic, strong, readwrite) MKMapView *mapView;
-@property (nonatomic, strong, readwrite) UITableView *searchHistoryTableView;//历史记录tableView
-@property (nonatomic, strong, readwrite) UIView *contentView;	//容器View。包装searchBar和MapView实现动画上移效果
+@property (nonatomic, strong, readwrite) IBOutlet MKMapView         *mapView;
+@property (nonatomic, strong, readwrite) IBOutlet UITableView       *searchHistoryTableView;//历史记录tableView
+@property (nonatomic, strong, readwrite) IBOutlet UIView            *contentView;//容器View。包装searchBar和MapView实现动画上移效果
+@property (weak, nonatomic) IBOutlet UIView *buttomTabBar;
+@property (weak, nonatomic) IBOutlet UILabel *tabBarLabel;
+- (IBAction)tabBarConfirmBtnClick:(UIButton *)sender;
+
+
 @end
 
 @implementation SelectMapViewController
 #pragma mark 初始化
-- (UISearchBar *)searchBar
-{
-    if(_searchBar == nil)
-    {
-        _searchBar = [[UISearchBar alloc] init];
-    }
-    return _searchBar;
-}
-
-- (MKMapView *)mapView
-{
-    if(_mapView == nil)
-    {
-        _mapView = [[MKMapView alloc] init];
-    }
-    return _mapView;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,13 +45,6 @@
 
 - (void)setupUI
 {
-	CGFloat searchBarH = 40;
-	
-	self.contentView = [[UIView alloc] initWithFrame:self.view.frame];
-	self.contentView.backgroundColor = [UIColor whiteColor];
-	[self.view addSubview:self.contentView];
-	
-    self.mapView.frame            = CGRectMake(0, searchBarH, MainWidth, MainHeight-searchBarH);
     self.locationMgr              = [[CLLocationManager alloc] init];
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
     self.mapView.delegate         = self;
@@ -79,7 +61,7 @@
         [self.locationMgr requestWhenInUseAuthorization];
     }
 	
-    self.searchBar = [[UISearchBar alloc] initWithFrame: CGRectMake(0.0, 0.0, self.view.bounds.size.width, 40)];
+
     self.searchBar.placeholder=@"请输入地址";
     self.searchBar.delegate           = self;
     self.searchBar.showsCancelButton  = YES;
@@ -88,21 +70,22 @@
     self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     
     [self.contentView addSubview: self.searchBar];
-    
-    self.searchHistoryTableView    = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+	
     self.searchHistoryTableView.frame           = CGRectMake(0, CGRectGetMaxY(self.searchBar.frame), MainWidth, MainHeight - self.searchBar.frame.size.height);
     self.searchHistoryTableView.backgroundColor = [UIColor colorWithWhite:0.435 alpha:0.690];
     self.searchHistoryTableView.delegate        = self;
     self.searchHistoryTableView.dataSource      = self;
     self.searchHistoryTableView.hidden          = YES;
     [self.contentView addSubview:self.searchHistoryTableView];
-    
+	
+	
     //键盘呼出或者隐藏时，对历史记录tableView做相应操作
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     self.title = @"地图";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelButtonClick)];
+	
 }
 
 - (void)setupData
@@ -172,18 +155,23 @@
 #pragma mark tableView代理
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, MainWidth, 44.0)];
+	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, MainWidth, 44.0)];
 	
-	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-	headerLabel.backgroundColor = [UIColor clearColor];
-	headerLabel.opaque = NO;
-	headerLabel.textColor = [UIColor blueColor];
-	headerLabel.highlightedTextColor = [UIColor whiteColor];
-	headerLabel.font = [UIFont boldSystemFontOfSize:18];
-	headerLabel.frame = CGRectMake(10.0, 0.0, MainWidth, 44.0);
+    UILabel * headerLabel            = [[UILabel alloc] initWithFrame:CGRectZero];
+    headerLabel.backgroundColor      = [UIColor clearColor];
+    headerLabel.opaque               = NO;
+    headerLabel.textColor            = [UIColor colorWithRed:0.275 green:0.498 blue:0.933 alpha:1.000];
+    headerLabel.highlightedTextColor = [UIColor whiteColor];
+    headerLabel.font                 = [UIFont boldSystemFontOfSize:16];
 	
-	headerLabel.text =  @"搜索历史";
-	
+	CGFloat headerLabelX = 10.0;
+	if(isNotiPhone6Plus){
+		headerLabelX = 15.0;
+	}else{
+		headerLabelX = 20.0;
+	}
+	headerLabel.frame                = CGRectMake(headerLabelX, 0.0, MainWidth, 44.0);
+    headerLabel.text                 = @"搜索历史";
 	
 	[customView addSubview:headerLabel];
 	
@@ -207,10 +195,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     cell.textLabel.text      = [NSString stringWithFormat:@"测试数据%ld",indexPath.row];
-    cell.textLabel.textColor = [UIColor colorWithWhite:0.872 alpha:1.000];
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.backgroundColor     = [UIColor clearColor];
     cell.selectionStyle      = UITableViewCellSelectionStyleNone;
-    
+	
     return cell;
 }
 
@@ -244,7 +232,7 @@
  */
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    userLocation.title = @"您的位置";
+    userLocation.title    = @"您的位置";
     userLocation.subtitle = @"您当前所在位置";
     
     CLLocationCoordinate2D center = userLocation.location.coordinate;
@@ -262,5 +250,7 @@
 //回到用户位置
 - (void)backToUserLocation {
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+}
+- (IBAction)tabBarConfirmBtnClick:(UIButton *)sender {
 }
 @end

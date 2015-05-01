@@ -70,7 +70,9 @@
 {
     if( [path rangeOfString:@"2"].location != NSNotFound)
     {
-        SelectMapViewController *vc = [[SelectMapViewController alloc] init];
+		SelectMapViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SelectMapVC"];
+		vc.title = @"地图";
+		
         HP_NavigationController *nav = [[HP_NavigationController alloc] initWithRootViewController:vc];
         [self.navigationController presentViewController:nav animated:YES completion:^{
             

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectMapBottomTabBarViewController">
+            <connections>
+                <outlet property="textLabel" destination="Pfp-ez-ang" id="8sr-B3-UwE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EmR-dX-cvF" userLabel="contentView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <subviews>
+                        <view alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0CP-me-g4F" userLabel="lineView">
+                            <rect key="frame" x="0.0" y="-1" width="320" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="龙旗购物中心" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfp-ez-ang">
+                            <rect key="frame" x="8" y="11" width="229" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="229" id="Lvp-fh-1uc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0P-AH-NzC">
+                            <rect key="frame" x="257" y="6" width="50" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="0ob-Zx-Va8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="确定">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="confirmBtnClick:" destination="-1" eventType="touchUpInside" id="Gh6-Tk-qW1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Pfp-ez-ang" firstAttribute="leading" secondItem="EmR-dX-cvF" secondAttribute="leading" constant="8" id="2gS-xx-uIr"/>
+                        <constraint firstAttribute="centerY" secondItem="Pfp-ez-ang" secondAttribute="centerY" id="Gg3-8a-YGf"/>
+                        <constraint firstAttribute="centerY" secondItem="c0P-AH-NzC" secondAttribute="centerY" id="TpF-UC-qRQ"/>
+                        <constraint firstAttribute="trailing" secondItem="c0P-AH-NzC" secondAttribute="trailing" constant="13" id="V4p-tF-g6R"/>
+                        <constraint firstAttribute="height" constant="44" id="iQ5-9d-hUI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="EmR-dX-cvF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XMz-ne-9v6"/>
+                <constraint firstAttribute="bottom" secondItem="EmR-dX-cvF" secondAttribute="bottom" id="Z0U-AT-2gg"/>
+                <constraint firstAttribute="trailing" secondItem="EmR-dX-cvF" secondAttribute="trailing" id="eY8-nk-wc7"/>
+                <constraint firstItem="EmR-dX-cvF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ssb-yW-UXU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="205" y="192"/>
+        </view>
+    </objects>
+</document>

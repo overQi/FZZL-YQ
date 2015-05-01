@@ -13,6 +13,8 @@
 #define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
 #define IOS6 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6)
 
+#define isNotiPhone6Plus ([UIScreen mainScreen].scale < 3.0)
+
 #define ScreenHeight [[UIScreen mainScreen] bounds].size.height
 #define ScreenWidth [[UIScreen mainScreen] bounds].size.width
 #define StateBarHeight 20

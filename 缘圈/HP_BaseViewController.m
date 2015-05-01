@@ -102,7 +102,7 @@
 	return [[self getNSUserDefaults] dictionaryForKey:key];
 }
 
-- (void)setArchiveObject:(id)object forKey:(NSString *)key
+- (void)setArchiveObject:(id<NSCoding>)object forKey:(NSString *)key
 {
 	NSMutableString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 	path = [[path stringByAppendingPathComponent:key] mutableCopy];
@@ -120,14 +120,6 @@
 	return  [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 }
 
-#pragma mark 代理方法
-// 向自己的代理返回数据
-- (void)baseViewController:(HP_BaseViewController *)controller CallbackData:(id)data
-{
-	if([self.delegate respondsToSelector:@selector(baseViewController:CallbackData:)])
-	{
-		[self.delegate baseViewController:self CallbackData:data];
-	}
-}
+
 
 @end

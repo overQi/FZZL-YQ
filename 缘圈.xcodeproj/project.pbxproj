@@ -14,6 +14,8 @@
 		740E63AC1AEB4B7F0015EFFF /* HP_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740E63AA1AEB4B7F0015EFFF /* HP_BaseViewController.m */; };
 		741F37871AEC7ED1001A62CB /* DestinyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741F37861AEC7ED1001A62CB /* DestinyViewController.m */; };
 		741F378A1AEC8BD7001A62CB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 741F37891AEC8BD7001A62CB /* UserModel.m */; };
+		74B8DF041AF31C9B0084E746 /* SelectMapBottomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DF021AF31C9B0084E746 /* SelectMapBottomTabBarViewController.m */; };
+		74B8DF051AF31C9B0084E746 /* SelectMapBottomTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B8DF031AF31C9B0084E746 /* SelectMapBottomTabBarViewController.xib */; };
 		74C394601AECDC330054BAF6 /* HP_ArchiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3945F1AECDC330054BAF6 /* HP_ArchiveUtils.m */; };
 		74CD49E31AECCAC1003C9118 /* HP_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E21AECCAC1003C9118 /* HP_BaseTableViewController.m */; };
 		74CD49E71AECCC89003C9118 /* SQLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CD49E61AECCC89003C9118 /* SQLManager.m */; };
@@ -137,6 +139,9 @@
 		741F37861AEC7ED1001A62CB /* DestinyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinyViewController.m; sourceTree = "<group>"; };
 		741F37881AEC8BD7001A62CB /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		741F37891AEC8BD7001A62CB /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		74B8DF011AF31C9B0084E746 /* SelectMapBottomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectMapBottomTabBarViewController.h; sourceTree = "<group>"; };
+		74B8DF021AF31C9B0084E746 /* SelectMapBottomTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectMapBottomTabBarViewController.m; sourceTree = "<group>"; };
+		74B8DF031AF31C9B0084E746 /* SelectMapBottomTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectMapBottomTabBarViewController.xib; sourceTree = "<group>"; };
 		74C3945E1AECDC330054BAF6 /* HP_ArchiveUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_ArchiveUtils.h; sourceTree = "<group>"; };
 		74C3945F1AECDC330054BAF6 /* HP_ArchiveUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_ArchiveUtils.m; sourceTree = "<group>"; };
 		74CD49E11AECCAC1003C9118 /* HP_BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_BaseTableViewController.h; sourceTree = "<group>"; };
@@ -352,6 +357,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74B8DF001AF31C450084E746 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74B8DF011AF31C9B0084E746 /* SelectMapBottomTabBarViewController.h */,
+				74B8DF021AF31C9B0084E746 /* SelectMapBottomTabBarViewController.m */,
+				74B8DF031AF31C9B0084E746 /* SelectMapBottomTabBarViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		74C3945D1AECDB270054BAF6 /* 模型 */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,13 +507,14 @@
 			name = "滑动连线View";
 			sourceTree = "<group>";
 		};
-		D98C2DF71AF0A563005B2226 /* 地图选择 */ = {
+		D98C2DF71AF0A563005B2226 /* 地图选择(随机地) */ = {
 			isa = PBXGroup;
 			children = (
+				74B8DF001AF31C450084E746 /* View */,
 				D98C2DF81AF0A5B7005B2226 /* SelectMapViewController.h */,
 				D98C2DF91AF0A5B7005B2226 /* SelectMapViewController.m */,
 			);
-			name = "地图选择";
+			name = "地图选择(随机地)";
 			sourceTree = "<group>";
 		};
 		D98C2E011AF0BD87005B2226 /* DXPopover */ = {
@@ -789,7 +805,7 @@
 				D9E1AE141AEA19A8006257F5 /* 缘圈 */,
 				D9E1AE151AEA19B7006257F5 /* 好友 */,
 				D9E1AE161AEA19C6006257F5 /* 我的 */,
-				D98C2DF71AF0A563005B2226 /* 地图选择 */,
+				D98C2DF71AF0A563005B2226 /* 地图选择(随机地) */,
 				D9F465B01AEA0C1200884829 /* Main */,
 			);
 			name = Classes;
@@ -914,6 +930,7 @@
 				D912BE391AEDCC1400F19108 /* FriendTableViewCell.xib in Resources */,
 				D9E1AE0F1AEA0E08006257F5 /* MBProgressHUD.bundle in Resources */,
 				D9E1ADFC1AEA0DA3006257F5 /* MJRefresh.bundle in Resources */,
+				74B8DF051AF31C9B0084E746 /* SelectMapBottomTabBarViewController.xib in Resources */,
 				D9F465971AEA0BF800884829 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,6 +949,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B8DF041AF31C9B0084E746 /* SelectMapBottomTabBarViewController.m in Sources */,
 				74CD49E31AECCAC1003C9118 /* HP_BaseTableViewController.m in Sources */,
 				D98C2E041AF0BD87005B2226 /* DXPopover.m in Sources */,
 				D9E1ADC61AEA0D5C006257F5 /* AFURLRequestSerialization.m in Sources */,
@@ -1143,7 +1161,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zhangzhi Wang (A8EG7M8E47)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "缘圈/PrefixHeader.pch";
 				INFOPLIST_FILE = "缘圈/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1155,7 +1173,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zhangzhi Wang (A8EG7M8E47)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "缘圈/PrefixHeader.pch";
 				INFOPLIST_FILE = "缘圈/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

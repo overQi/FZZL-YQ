@@ -52,7 +52,7 @@
 	attrs[NSForegroundColorAttributeName ] = [UIColor lightGrayColor];
 	attrs[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
 	if(IOS7){
-		attrs[NSForegroundColorAttributeName ] = kColor(234, 103, 7, 1);
+		attrs[NSForegroundColorAttributeName ] = kNavButtonColor;
 	}
 	[item setTitleTextAttributes:attrs forState:UIControlStateNormal];
 	[item setTitleTextAttributes:attrs forState:UIControlStateHighlighted];
