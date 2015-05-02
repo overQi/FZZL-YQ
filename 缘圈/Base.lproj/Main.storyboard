@@ -173,8 +173,12 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="slk-Ct-mdd"/>
                                         </constraints>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                     </searchBar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKL-Vx-5PG" userLabel="Map View">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="392"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vp3-AY-0kY" userLabel="bottomTabBar">
                                         <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                         <subviews>
@@ -185,14 +189,14 @@
                                                     <constraint firstAttribute="height" constant="1" id="IBG-VI-liH"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="龙旗购物中心" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S82-Xd-VxD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择地点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S82-Xd-VxD">
                                                 <rect key="frame" x="20" y="0.0" width="200" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="g7s-zI-mQW"/>
                                                     <constraint firstAttribute="width" constant="200" id="gBA-Vw-OvP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -246,50 +250,29 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3jN-WG-pHh">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="392"/>
-                                    </mapView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="biy-Lo-sa3" userLabel="searchHistoryTableView">
                                         <rect key="frame" x="0.0" y="44" width="320" height="392"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="trailing" secondItem="wRl-DM-bkI" secondAttribute="leading" id="47p-VP-dER"/>
                                     <constraint firstItem="wRl-DM-bkI" firstAttribute="top" secondItem="fBh-zd-nMV" secondAttribute="top" id="A7i-pu-9aG"/>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="leading" secondItem="fBh-zd-nMV" secondAttribute="leading" id="B1K-vR-zqP"/>
-                                    <constraint firstAttribute="centerX" secondItem="3jN-WG-pHh" secondAttribute="centerX" id="C6t-rX-pnf"/>
+                                    <constraint firstAttribute="trailing" secondItem="UKL-Vx-5PG" secondAttribute="trailing" id="BYG-9W-EgY"/>
                                     <constraint firstAttribute="bottom" secondItem="Vp3-AY-0kY" secondAttribute="bottom" id="HQW-8Q-WRz"/>
                                     <constraint firstItem="wRl-DM-bkI" firstAttribute="leading" secondItem="fBh-zd-nMV" secondAttribute="leading" id="Jct-gg-twy"/>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="bottom" secondItem="fBh-zd-nMV" secondAttribute="bottom" constant="-44" id="L6b-Cw-gcz"/>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="top" secondItem="fBh-zd-nMV" secondAttribute="top" constant="44" id="Mtq-ks-aut"/>
                                     <constraint firstAttribute="trailing" secondItem="wRl-DM-bkI" secondAttribute="trailing" id="N8n-9z-xA4"/>
-                                    <constraint firstAttribute="bottom" secondItem="3jN-WG-pHh" secondAttribute="bottom" constant="44" id="NWT-ha-Usc"/>
+                                    <constraint firstItem="Vp3-AY-0kY" firstAttribute="top" secondItem="UKL-Vx-5PG" secondAttribute="bottom" id="NkD-Hx-IlF"/>
                                     <constraint firstAttribute="centerX" secondItem="wRl-DM-bkI" secondAttribute="centerX" id="QiP-kc-wsO"/>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="top" secondItem="wRl-DM-bkI" secondAttribute="bottom" id="Sh9-sW-5aK"/>
                                     <constraint firstItem="Vp3-AY-0kY" firstAttribute="leading" secondItem="fBh-zd-nMV" secondAttribute="leading" id="UPn-bx-yyF"/>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="top" secondItem="fBh-zd-nMV" secondAttribute="top" constant="44" id="WhL-Ep-hfE"/>
                                     <constraint firstItem="biy-Lo-sa3" firstAttribute="trailing" secondItem="fBh-zd-nMV" secondAttribute="trailing" id="XMd-18-uyn"/>
                                     <constraint firstAttribute="bottom" secondItem="biy-Lo-sa3" secondAttribute="bottom" constant="44" id="aXv-yr-KU9"/>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="leading" secondItem="wRl-DM-bkI" secondAttribute="leading" id="aee-ME-Y1T"/>
+                                    <constraint firstItem="UKL-Vx-5PG" firstAttribute="leading" secondItem="fBh-zd-nMV" secondAttribute="leading" id="bIe-eZ-clf"/>
                                     <constraint firstItem="biy-Lo-sa3" firstAttribute="top" secondItem="fBh-zd-nMV" secondAttribute="top" constant="44" id="eeo-ug-SIM"/>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="trailing" secondItem="wRl-DM-bkI" secondAttribute="trailing" id="fyW-BB-fOU"/>
+                                    <constraint firstItem="UKL-Vx-5PG" firstAttribute="top" secondItem="wRl-DM-bkI" secondAttribute="bottom" id="hJ4-uh-P9r"/>
                                     <constraint firstAttribute="trailing" secondItem="Vp3-AY-0kY" secondAttribute="trailing" id="q0U-Dg-qkD"/>
-                                    <constraint firstItem="3jN-WG-pHh" firstAttribute="leading" secondItem="fBh-zd-nMV" secondAttribute="leading" id="zei-oY-scd"/>
                                     <constraint firstItem="biy-Lo-sa3" firstAttribute="leading" secondItem="fBh-zd-nMV" secondAttribute="leading" id="zhU-xa-HuP"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="47p-VP-dER"/>
-                                        <exclude reference="L6b-Cw-gcz"/>
-                                        <exclude reference="Mtq-ks-aut"/>
-                                        <exclude reference="Sh9-sW-5aK"/>
-                                        <exclude reference="aee-ME-Y1T"/>
-                                        <exclude reference="fyW-BB-fOU"/>
-                                        <exclude reference="zei-oY-scd"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -298,7 +281,6 @@
                             <constraint firstItem="fBh-zd-nMV" firstAttribute="leading" secondItem="Q9f-5x-7na" secondAttribute="leading" id="JsY-6k-Bgi"/>
                             <constraint firstItem="fBh-zd-nMV" firstAttribute="top" secondItem="Q9f-5x-7na" secondAttribute="top" id="MvC-Cr-kTP"/>
                             <constraint firstAttribute="bottom" secondItem="fBh-zd-nMV" secondAttribute="bottom" id="PFt-dx-aMw"/>
-                            <constraint firstItem="3jN-WG-pHh" firstAttribute="width" secondItem="Q9f-5x-7na" secondAttribute="width" id="ZYn-ZQ-2Mi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fBh-zd-nMV" secondAttribute="trailing" constant="-7" id="nA5-tO-pxQ"/>
                             <constraint firstItem="fBh-zd-nMV" firstAttribute="leading" secondItem="Q9f-5x-7na" secondAttribute="leadingMargin" id="rGa-ET-pPS"/>
                         </constraints>
@@ -313,7 +295,7 @@
                     <connections>
                         <outlet property="buttomTabBar" destination="Vp3-AY-0kY" id="9h0-wM-jix"/>
                         <outlet property="contentView" destination="fBh-zd-nMV" id="uku-t7-rfl"/>
-                        <outlet property="mapView" destination="3jN-WG-pHh" id="YoK-hC-i9t"/>
+                        <outlet property="mapViewContent" destination="UKL-Vx-5PG" id="14I-4e-ymV"/>
                         <outlet property="searchBar" destination="wRl-DM-bkI" id="xoz-IP-usz"/>
                         <outlet property="searchHistoryTableView" destination="biy-Lo-sa3" id="FY2-rJ-eQH"/>
                         <outlet property="tabBarLabel" destination="S82-Xd-VxD" id="no4-6g-dJj"/>

@@ -8,9 +8,11 @@
 
 #import "HP_BaseTabBarController.h"
 #import "HP_UserDefaultsUtils.h"
+#import "BaseMapViewController.h"
 
 @interface HP_BaseTabBarController ()
-
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) AMapSearchAPI *search;
 @end
 
 @implementation HP_BaseTabBarController
@@ -36,7 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+	
 }
 
 - (void)didReceiveMemoryWarning

@@ -14,6 +14,22 @@
 		740E63AC1AEB4B7F0015EFFF /* HP_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740E63AA1AEB4B7F0015EFFF /* HP_BaseViewController.m */; };
 		741F37871AEC7ED1001A62CB /* DestinyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741F37861AEC7ED1001A62CB /* DestinyViewController.m */; };
 		741F378A1AEC8BD7001A62CB /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 741F37891AEC8BD7001A62CB /* UserModel.m */; };
+		74A8FEE61AF4C82E00331A93 /* CommonMapUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEE51AF4C82E00331A93 /* CommonMapUtility.m */; };
+		74A8FF061AF4C8BA00331A93 /* AnimatedAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEE91AF4C8BA00331A93 /* AnimatedAnnotation.m */; };
+		74A8FF071AF4C8BA00331A93 /* AnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEEB1AF4C8BA00331A93 /* AnimatedAnnotationView.m */; };
+		74A8FF081AF4C8BA00331A93 /* BusStopAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEED1AF4C8BA00331A93 /* BusStopAnnotation.m */; };
+		74A8FF091AF4C8BA00331A93 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEEF1AF4C8BA00331A93 /* CustomAnnotationView.m */; };
+		74A8FF0A1AF4C8BA00331A93 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEF11AF4C8BA00331A93 /* CustomCalloutView.m */; };
+		74A8FF0B1AF4C8BA00331A93 /* CustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEF31AF4C8BA00331A93 /* CustomOverlay.m */; };
+		74A8FF0C1AF4C8BA00331A93 /* CustomOverlayRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEF51AF4C8BA00331A93 /* CustomOverlayRenderer.m */; };
+		74A8FF0D1AF4C8BA00331A93 /* GeocodeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEF71AF4C8BA00331A93 /* GeocodeAnnotation.m */; };
+		74A8FF0E1AF4C8BA00331A93 /* LineDashPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEF91AF4C8BA00331A93 /* LineDashPolyline.m */; };
+		74A8FF0F1AF4C8BA00331A93 /* LocalTileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEFB1AF4C8BA00331A93 /* LocalTileOverlay.m */; };
+		74A8FF101AF4C8BA00331A93 /* MANaviAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEFD1AF4C8BA00331A93 /* MANaviAnnotation.m */; };
+		74A8FF111AF4C8BA00331A93 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FEFF1AF4C8BA00331A93 /* MANaviAnnotationView.m */; };
+		74A8FF121AF4C8BA00331A93 /* MANaviRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FF011AF4C8BA00331A93 /* MANaviRoute.m */; };
+		74A8FF131AF4C8BA00331A93 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FF031AF4C8BA00331A93 /* POIAnnotation.m */; };
+		74A8FF141AF4C8BA00331A93 /* ReGeocodeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8FF051AF4C8BA00331A93 /* ReGeocodeAnnotation.m */; };
 		74B8DF041AF31C9B0084E746 /* SelectMapBottomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DF021AF31C9B0084E746 /* SelectMapBottomTabBarViewController.m */; };
 		74B8DF051AF31C9B0084E746 /* SelectMapBottomTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B8DF031AF31C9B0084E746 /* SelectMapBottomTabBarViewController.xib */; };
 		74C394601AECDC330054BAF6 /* HP_ArchiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3945F1AECDC330054BAF6 /* HP_ArchiveUtils.m */; };
@@ -29,6 +45,7 @@
 		74E329A21AF46430004E1E3A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E329A11AF46430004E1E3A /* libz.dylib */; };
 		74E329A41AF46442004E1E3A /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E329A31AF46442004E1E3A /* libstdc++.6.0.9.dylib */; };
 		74E329A61AF4644A004E1E3A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E329A51AF4644A004E1E3A /* Security.framework */; };
+		74E329A91AF46D03004E1E3A /* BaseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E329A81AF46D03004E1E3A /* BaseMapViewController.m */; };
 		D9031E111AF068CD008F4051 /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D9031E101AF068CD008F4051 /* AFViewShaker.m */; };
 		D912BE381AEDCC1400F19108 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D912BE361AEDCC1400F19108 /* FriendTableViewCell.m */; };
 		D912BE391AEDCC1400F19108 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D912BE371AEDCC1400F19108 /* FriendTableViewCell.xib */; };
@@ -148,6 +165,38 @@
 		741F37861AEC7ED1001A62CB /* DestinyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinyViewController.m; sourceTree = "<group>"; };
 		741F37881AEC8BD7001A62CB /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		741F37891AEC8BD7001A62CB /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		74A8FEE41AF4C82E00331A93 /* CommonMapUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMapUtility.h; sourceTree = "<group>"; };
+		74A8FEE51AF4C82E00331A93 /* CommonMapUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonMapUtility.m; sourceTree = "<group>"; };
+		74A8FEE81AF4C8BA00331A93 /* AnimatedAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedAnnotation.h; sourceTree = "<group>"; };
+		74A8FEE91AF4C8BA00331A93 /* AnimatedAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedAnnotation.m; sourceTree = "<group>"; };
+		74A8FEEA1AF4C8BA00331A93 /* AnimatedAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedAnnotationView.h; sourceTree = "<group>"; };
+		74A8FEEB1AF4C8BA00331A93 /* AnimatedAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedAnnotationView.m; sourceTree = "<group>"; };
+		74A8FEEC1AF4C8BA00331A93 /* BusStopAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopAnnotation.h; sourceTree = "<group>"; };
+		74A8FEED1AF4C8BA00331A93 /* BusStopAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopAnnotation.m; sourceTree = "<group>"; };
+		74A8FEEE1AF4C8BA00331A93 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		74A8FEEF1AF4C8BA00331A93 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
+		74A8FEF01AF4C8BA00331A93 /* CustomCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCalloutView.h; sourceTree = "<group>"; };
+		74A8FEF11AF4C8BA00331A93 /* CustomCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCalloutView.m; sourceTree = "<group>"; };
+		74A8FEF21AF4C8BA00331A93 /* CustomOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOverlay.h; sourceTree = "<group>"; };
+		74A8FEF31AF4C8BA00331A93 /* CustomOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOverlay.m; sourceTree = "<group>"; };
+		74A8FEF41AF4C8BA00331A93 /* CustomOverlayRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOverlayRenderer.h; sourceTree = "<group>"; };
+		74A8FEF51AF4C8BA00331A93 /* CustomOverlayRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOverlayRenderer.m; sourceTree = "<group>"; };
+		74A8FEF61AF4C8BA00331A93 /* GeocodeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeAnnotation.h; sourceTree = "<group>"; };
+		74A8FEF71AF4C8BA00331A93 /* GeocodeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeAnnotation.m; sourceTree = "<group>"; };
+		74A8FEF81AF4C8BA00331A93 /* LineDashPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDashPolyline.h; sourceTree = "<group>"; };
+		74A8FEF91AF4C8BA00331A93 /* LineDashPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDashPolyline.m; sourceTree = "<group>"; };
+		74A8FEFA1AF4C8BA00331A93 /* LocalTileOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalTileOverlay.h; sourceTree = "<group>"; };
+		74A8FEFB1AF4C8BA00331A93 /* LocalTileOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalTileOverlay.m; sourceTree = "<group>"; };
+		74A8FEFC1AF4C8BA00331A93 /* MANaviAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotation.h; sourceTree = "<group>"; };
+		74A8FEFD1AF4C8BA00331A93 /* MANaviAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotation.m; sourceTree = "<group>"; };
+		74A8FEFE1AF4C8BA00331A93 /* MANaviAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotationView.h; sourceTree = "<group>"; };
+		74A8FEFF1AF4C8BA00331A93 /* MANaviAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotationView.m; sourceTree = "<group>"; };
+		74A8FF001AF4C8BA00331A93 /* MANaviRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviRoute.h; sourceTree = "<group>"; };
+		74A8FF011AF4C8BA00331A93 /* MANaviRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviRoute.m; sourceTree = "<group>"; };
+		74A8FF021AF4C8BA00331A93 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIAnnotation.h; sourceTree = "<group>"; };
+		74A8FF031AF4C8BA00331A93 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIAnnotation.m; sourceTree = "<group>"; };
+		74A8FF041AF4C8BA00331A93 /* ReGeocodeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReGeocodeAnnotation.h; sourceTree = "<group>"; };
+		74A8FF051AF4C8BA00331A93 /* ReGeocodeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReGeocodeAnnotation.m; sourceTree = "<group>"; };
 		74B8DF011AF31C9B0084E746 /* SelectMapBottomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectMapBottomTabBarViewController.h; sourceTree = "<group>"; };
 		74B8DF021AF31C9B0084E746 /* SelectMapBottomTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectMapBottomTabBarViewController.m; sourceTree = "<group>"; };
 		74B8DF031AF31C9B0084E746 /* SelectMapBottomTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectMapBottomTabBarViewController.xib; sourceTree = "<group>"; };
@@ -169,6 +218,8 @@
 		74E329A11AF46430004E1E3A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		74E329A31AF46442004E1E3A /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		74E329A51AF4644A004E1E3A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		74E329A71AF46D03004E1E3A /* BaseMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapViewController.h; sourceTree = "<group>"; };
+		74E329A81AF46D03004E1E3A /* BaseMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapViewController.m; sourceTree = "<group>"; };
 		D9031E0F1AF068CD008F4051 /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewShaker.h; sourceTree = "<group>"; };
 		D9031E101AF068CD008F4051 /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewShaker.m; sourceTree = "<group>"; };
 		D912BE351AEDCC1400F19108 /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
@@ -383,6 +434,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74A8FEE71AF4C8BA00331A93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74A8FEE81AF4C8BA00331A93 /* AnimatedAnnotation.h */,
+				74A8FEE91AF4C8BA00331A93 /* AnimatedAnnotation.m */,
+				74A8FEEA1AF4C8BA00331A93 /* AnimatedAnnotationView.h */,
+				74A8FEEB1AF4C8BA00331A93 /* AnimatedAnnotationView.m */,
+				74A8FEEC1AF4C8BA00331A93 /* BusStopAnnotation.h */,
+				74A8FEED1AF4C8BA00331A93 /* BusStopAnnotation.m */,
+				74A8FEEE1AF4C8BA00331A93 /* CustomAnnotationView.h */,
+				74A8FEEF1AF4C8BA00331A93 /* CustomAnnotationView.m */,
+				74A8FEF01AF4C8BA00331A93 /* CustomCalloutView.h */,
+				74A8FEF11AF4C8BA00331A93 /* CustomCalloutView.m */,
+				74A8FEF21AF4C8BA00331A93 /* CustomOverlay.h */,
+				74A8FEF31AF4C8BA00331A93 /* CustomOverlay.m */,
+				74A8FEF41AF4C8BA00331A93 /* CustomOverlayRenderer.h */,
+				74A8FEF51AF4C8BA00331A93 /* CustomOverlayRenderer.m */,
+				74A8FEF61AF4C8BA00331A93 /* GeocodeAnnotation.h */,
+				74A8FEF71AF4C8BA00331A93 /* GeocodeAnnotation.m */,
+				74A8FEF81AF4C8BA00331A93 /* LineDashPolyline.h */,
+				74A8FEF91AF4C8BA00331A93 /* LineDashPolyline.m */,
+				74A8FEFA1AF4C8BA00331A93 /* LocalTileOverlay.h */,
+				74A8FEFB1AF4C8BA00331A93 /* LocalTileOverlay.m */,
+				74A8FEFC1AF4C8BA00331A93 /* MANaviAnnotation.h */,
+				74A8FEFD1AF4C8BA00331A93 /* MANaviAnnotation.m */,
+				74A8FEFE1AF4C8BA00331A93 /* MANaviAnnotationView.h */,
+				74A8FEFF1AF4C8BA00331A93 /* MANaviAnnotationView.m */,
+				74A8FF001AF4C8BA00331A93 /* MANaviRoute.h */,
+				74A8FF011AF4C8BA00331A93 /* MANaviRoute.m */,
+				74A8FF021AF4C8BA00331A93 /* POIAnnotation.h */,
+				74A8FF031AF4C8BA00331A93 /* POIAnnotation.m */,
+				74A8FF041AF4C8BA00331A93 /* ReGeocodeAnnotation.h */,
+				74A8FF051AF4C8BA00331A93 /* ReGeocodeAnnotation.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		74B8DF001AF31C450084E746 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +624,7 @@
 		D98C2DF71AF0A563005B2226 /* 地图选择(随机地) */ = {
 			isa = PBXGroup;
 			children = (
+				74A8FEE71AF4C8BA00331A93 /* Models */,
 				74B8DF001AF31C450084E746 /* View */,
 				D98C2DF81AF0A5B7005B2226 /* SelectMapViewController.h */,
 				D98C2DF91AF0A5B7005B2226 /* SelectMapViewController.m */,
@@ -851,6 +940,10 @@
 			children = (
 				D9F4658D1AEA0BF800884829 /* AppDelegate.h */,
 				D9F4658E1AEA0BF800884829 /* AppDelegate.m */,
+				74A8FEE41AF4C82E00331A93 /* CommonMapUtility.h */,
+				74A8FEE51AF4C82E00331A93 /* CommonMapUtility.m */,
+				74E329A71AF46D03004E1E3A /* BaseMapViewController.h */,
+				74E329A81AF46D03004E1E3A /* BaseMapViewController.m */,
 				740E63A71AEB4B7F0015EFFF /* HP_BaseTabBarController.h */,
 				740E63A81AEB4B7F0015EFFF /* HP_BaseTabBarController.m */,
 				740E63A91AEB4B7F0015EFFF /* HP_BaseViewController.h */,
@@ -990,34 +1083,45 @@
 				D98C2E041AF0BD87005B2226 /* DXPopover.m in Sources */,
 				D9E1ADC61AEA0D5C006257F5 /* AFURLRequestSerialization.m in Sources */,
 				D9E1AE021AEA0DA3006257F5 /* MJRefreshHeader.m in Sources */,
+				74A8FF061AF4C8BA00331A93 /* AnimatedAnnotation.m in Sources */,
 				D9833BAD1AEA20790092566A /* SDWebImageManager+MJ.m in Sources */,
+				74E329A91AF46D03004E1E3A /* BaseMapViewController.m in Sources */,
 				D9833BA81AEA20790092566A /* MJPhotoBrowser.m in Sources */,
 				D9E1ADFF1AEA0DA3006257F5 /* MJRefreshFooter.m in Sources */,
+				74A8FF0D1AF4C8BA00331A93 /* GeocodeAnnotation.m in Sources */,
 				D9E1AC9B1AEA0D02006257F5 /* UIImageView+HighlightedWebCache.m in Sources */,
 				D9E1AE251AEA1DF3006257F5 /* MBProgressHUD+MJ.m in Sources */,
+				74A8FF0B1AF4C8BA00331A93 /* CustomOverlay.m in Sources */,
 				D9E1AE051AEA0DA3006257F5 /* UIScrollView+MJExtension.m in Sources */,
 				741F378A1AEC8BD7001A62CB /* UserModel.m in Sources */,
 				D9E1AC8F1AEA0D02006257F5 /* NSData+ImageContentType.m in Sources */,
 				D9E1AC951AEA0D02006257F5 /* SDWebImageManager.m in Sources */,
 				D9E1ADE21AEA0D75006257F5 /* NSString+MJExtension.m in Sources */,
+				74A8FF111AF4C8BA00331A93 /* MANaviAnnotationView.m in Sources */,
 				D9E1ACAA1AEA0D17006257F5 /* FMDatabase.m in Sources */,
 				D9E1ADC51AEA0D5C006257F5 /* AFURLConnectionOperation.m in Sources */,
 				D9E1AC931AEA0D02006257F5 /* SDWebImageDownloader.m in Sources */,
 				D9833BD81AEA3CBA0092566A /* HP_NetWorkUtils.m in Sources */,
+				74A8FF141AF4C8BA00331A93 /* ReGeocodeAnnotation.m in Sources */,
 				D9E1ADE11AEA0D75006257F5 /* NSObject+MJProperty.m in Sources */,
 				D9E1ACAC1AEA0D17006257F5 /* FMDatabasePool.m in Sources */,
+				74A8FF0E1AF4C8BA00331A93 /* LineDashPolyline.m in Sources */,
 				740E63A21AEB45D20015EFFF /* NSDate+Common4IOS.m in Sources */,
 				740E639F1AEB45730015EFFF /* NSData+Common4IOS.m in Sources */,
+				74A8FF081AF4C8BA00331A93 /* BusStopAnnotation.m in Sources */,
 				D9E1AE101AEA0E08006257F5 /* MBProgressHUD.m in Sources */,
 				D9E1AE001AEA0DA3006257F5 /* MJRefreshGifFooter.m in Sources */,
 				D9833BD71AEA3CBA0092566A /* HP_JSONUtils.m in Sources */,
 				D9E1ADDC1AEA0D75006257F5 /* MJFoundation.m in Sources */,
 				D9031E111AF068CD008F4051 /* AFViewShaker.m in Sources */,
+				74A8FF131AF4C8BA00331A93 /* POIAnnotation.m in Sources */,
 				740E63AC1AEB4B7F0015EFFF /* HP_BaseViewController.m in Sources */,
 				D9E1ACAE1AEA0D17006257F5 /* FMResultSet.m in Sources */,
+				74A8FF101AF4C8BA00331A93 /* MANaviAnnotation.m in Sources */,
 				D9E1ACAB1AEA0D17006257F5 /* FMDatabaseAdditions.m in Sources */,
 				D9E1AC9A1AEA0D02006257F5 /* UIImage+WebP.m in Sources */,
 				D9E1AE211AEA1CD1006257F5 /* HttpTool.m in Sources */,
+				74A8FF0A1AF4C8BA00331A93 /* CustomCalloutView.m in Sources */,
 				740E63AB1AEB4B7F0015EFFF /* HP_BaseTabBarController.m in Sources */,
 				74CD49EA1AECD3C1003C9118 /* HP_NavigationController.m in Sources */,
 				D9833BDB1AEA3CBA0092566A /* HP_PlistUtils.m in Sources */,
@@ -1042,6 +1146,8 @@
 				D9E1AE011AEA0DA3006257F5 /* MJRefreshGifHeader.m in Sources */,
 				D9E1AC941AEA0D02006257F5 /* SDWebImageDownloaderOperation.m in Sources */,
 				D9F4658F1AEA0BF800884829 /* AppDelegate.m in Sources */,
+				74A8FF0F1AF4C8BA00331A93 /* LocalTileOverlay.m in Sources */,
+				74A8FF0C1AF4C8BA00331A93 /* CustomOverlayRenderer.m in Sources */,
 				D9E1AC971AEA0D02006257F5 /* UIButton+WebCache.m in Sources */,
 				D9E1AC961AEA0D02006257F5 /* SDWebImagePrefetcher.m in Sources */,
 				D912BE381AEDCC1400F19108 /* FriendTableViewCell.m in Sources */,
@@ -1049,10 +1155,13 @@
 				D9E1AE071AEA0DA3006257F5 /* UIView+MJExtension.m in Sources */,
 				741F37871AEC7ED1001A62CB /* DestinyViewController.m in Sources */,
 				D9E1ADC11AEA0D5C006257F5 /* AFHTTPRequestOperationManager.m in Sources */,
+				74A8FF071AF4C8BA00331A93 /* AnimatedAnnotationView.m in Sources */,
 				D9833BAB1AEA20790092566A /* MJPhotoToolbar.m in Sources */,
 				D9E1ADE01AEA0D75006257F5 /* NSObject+MJKeyValue.m in Sources */,
 				D9833BE41AEA3D2F0092566A /* UIImage+Common4IOS.m in Sources */,
 				D9E1ADC21AEA0D5C006257F5 /* AFHTTPSessionManager.m in Sources */,
+				74A8FEE61AF4C82E00331A93 /* CommonMapUtility.m in Sources */,
+				74A8FF121AF4C8BA00331A93 /* MANaviRoute.m in Sources */,
 				D9E1ADFD1AEA0DA3006257F5 /* MJRefreshComponent.m in Sources */,
 				D9E1AC9C1AEA0D02006257F5 /* UIImageView+WebCache.m in Sources */,
 				D9E1AC911AEA0D02006257F5 /* SDWebImageCompat.m in Sources */,
@@ -1074,6 +1183,7 @@
 				D9E1ADFE1AEA0DA3006257F5 /* MJRefreshConst.m in Sources */,
 				D9E1AC981AEA0D02006257F5 /* UIImage+GIF.m in Sources */,
 				D9E1ADC71AEA0D5C006257F5 /* AFURLResponseSerialization.m in Sources */,
+				74A8FF091AF4C8BA00331A93 /* CustomAnnotationView.m in Sources */,
 				D9833BA91AEA20790092566A /* MJPhotoLoadingView.m in Sources */,
 				D9F4658C1AEA0BF800884829 /* main.m in Sources */,
 			);

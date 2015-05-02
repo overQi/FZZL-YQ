@@ -7,7 +7,8 @@
 //
 
 #import "HP_BaseViewController.h"
+#import "BaseMapViewController.h"
 
-@interface SelectMapViewController : HP_BaseViewController
+@interface SelectMapViewController : BaseMapViewController
 
 @end

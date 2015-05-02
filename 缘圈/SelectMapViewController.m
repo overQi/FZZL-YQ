@@ -7,93 +7,67 @@
 //
 
 #import "SelectMapViewController.h"
-#import <MapKit/MapKit.h>
-#import <CoreLocation/CoreLocation.h>
 #import "DXPopover.h"
 #import "HP_NavigationController.h"
 #import "MBProgressHUD+HP.h"
+#import "CommonMapUtility.h"
+#import "GeocodeAnnotation.h"
 
-
-@interface SelectMapViewController ()<UISearchBarDelegate,MKMapViewDelegate,CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource>
-
-@property (nonatomic, strong, readwrite) IBOutlet UISearchBar       *searchBar;
-@property (nonatomic, strong, readwrite) IBOutlet MKMapView         *mapView;
-@property (nonatomic, strong, readwrite) IBOutlet UITableView       *searchHistoryTableView;//历史记录tableView
-@property (nonatomic, strong, readwrite) IBOutlet UIView            *contentView;//容器View。包装searchBar和MapView实现动画上移效果
+@interface SelectMapViewController ()<UISearchBarDelegate,UISearchDisplayDelegate,UITableViewDelegate,UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UIView *mapViewContent;
+@property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) IBOutlet UITableView *searchHistoryTableView;//历史记录
+@property (nonatomic, strong) IBOutlet UIView *contentView;//容器View。包装searchBar和MapView实现动画上移效果
 @property (weak, nonatomic) IBOutlet UIView *buttomTabBar;
 @property (weak, nonatomic) IBOutlet UILabel *tabBarLabel;
-
-@property (nonatomic, strong, readwrite) NSMutableArray *alternativeAddressesM;	//备选目的地
-@property (nonatomic, strong, readwrite) NSMutableArray *historyAddressM;		//历史搜索地址
-@property (nonatomic, strong, readwrite) CLLocationManager *locationMgr;
-@property (nonatomic, strong) CLGeocoder *geocoder;
-@property (nonatomic, strong, readwrite) MKUserLocation *userLocation;
+@property (nonatomic, strong, readwrite) NSMutableArray *historyAddressM;//历史搜索地址
+@property (nonatomic, strong) NSMutableArray *tips;		//搜索提示
 - (IBAction)tabBarConfirmBtnClick:(UIButton *)sender;
 @end
 
 @implementation SelectMapViewController
-#pragma mark 初始化
 
-- (NSMutableArray *)alternativeAddressesM
-{
-	if(_alternativeAddressesM == nil)
-	{
-		_alternativeAddressesM = [NSMutableArray array];
-	}
-	return _alternativeAddressesM;
-}
-- (NSMutableArray *)historyAddressM
-{
-	if(_historyAddressM == nil)
-	{
-		_historyAddressM = [NSMutableArray array];
-	}
-	return _historyAddressM;
-}
-
-- (CLGeocoder *)geocoder
-{
-	if (!_geocoder) {
-		self.geocoder = [[CLGeocoder alloc] init];
-	}
-	return _geocoder;
-}
+#pragma mark 生命周期
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self setupUI];
-    [self setupData];
-    
+	[super viewDidLoad];
+	
+	[self setupUI];
+	[self setupData];
+	
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	//键盘呼出或者隐藏时，对历史记录tableView做相应操作
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+	//用户位置追踪
+	[self.mapView addObserver:self forKeyPath:@"showsUserLocation" options:NSKeyValueObservingOptionNew context:nil];
+	
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+	self.mapView.showsUserLocation = YES;
+	self.mapView.userTrackingMode  = MAUserTrackingModeFollow;
+	[self.mapView setZoomLevel:16.1 animated:YES];
 }
 
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	self.mapView.userTrackingMode  = MAUserTrackingModeNone;
+	[self.mapView removeObserver:self forKeyPath:@"showsUserLocation"];
 }
 
+#pragma mark 自定义函数
 - (void)setupUI
 {
-    self.locationMgr              = [[CLLocationManager alloc] init];
-    self.mapView.userTrackingMode = MKUserTrackingModeFollow;
-    self.mapView.delegate         = self;
-	
-    [self.contentView addSubview:self.mapView];
-	
-    self.locationMgr                 = [[CLLocationManager alloc]init];
-    self.locationMgr.delegate        = self;
-    self.locationMgr.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationMgr.distanceFilter  = 20.0;    //移动忽略距离
-    [self.locationMgr startUpdatingLocation];
-    //ios8弹出提示框
-    if(IOS8){
-        [self.locationMgr requestWhenInUseAuthorization];
-    }
-	
+	self.mapView.frame = self.mapViewContent.bounds;
+	[self.mapViewContent addSubview:self.mapView];
 
     self.searchBar.placeholder=@"请输入地址";
     self.searchBar.delegate           = self;
@@ -102,20 +76,12 @@
     self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
 	
-    [self.contentView addSubview: self.searchBar];
-	
     self.searchHistoryTableView.frame           = CGRectMake(0, CGRectGetMaxY(self.searchBar.frame), MainWidth, MainHeight - self.searchBar.frame.size.height);
     self.searchHistoryTableView.backgroundColor = [UIColor colorWithWhite:0.435 alpha:0.690];
     self.searchHistoryTableView.delegate        = self;
     self.searchHistoryTableView.dataSource      = self;
     self.searchHistoryTableView.hidden          = YES;
-    [self.contentView addSubview:self.searchHistoryTableView];
 	
-	
-    //键盘呼出或者隐藏时，对历史记录tableView做相应操作
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
     self.title = @"地图";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelButtonClick)];
 	
@@ -129,8 +95,10 @@
 	}
 }
 
+#pragma mark NSKeyValueObservering 键盘
 - (void)keyBoardWillShow:(NSNotification *)note
 {
+	//计算遮盖tableView的尺寸和实现动画效果
     self.searchHistoryTableView.hidden = NO;
 	
 	CGFloat duaration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
@@ -161,6 +129,14 @@
 	}];
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if ([keyPath isEqualToString:@"showsUserLocation"])
+	{
+		FZ_LOG(@"用户位置改变");
+	}
+}
+
 - (void)cancelButtonClick
 {
     [self dismissViewControllerAnimated:YES completion:^{
@@ -172,29 +148,21 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {
     [searchBar resignFirstResponder];
-
+	if(searchBar.text.length == 0)
+	{
+		[self clear];
+		self.tabBarLabel.text = @"请选择地点";
+	}
 }
 
 //点击搜索
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    
-    [searchBar resignFirstResponder];
-	if(self.searchBar.text.length > 0)
-	{
-		__weak __typeof(self)weakSelf = self;
-		dispatch_queue_t concurrentQueue = dispatch_queue_create("getGeocodeWithAddress.concurrent.queue", DISPATCH_QUEUE_CONCURRENT);
-		dispatch_async(concurrentQueue, ^(){
-			[weakSelf getGeocodeWithAddress:weakSelf.searchBar.text];
-		});
-		
-	}
-}
+	NSString *key = searchBar.text;
 
-//开始编辑
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    
+	[self clearAndSearchGeocodeWithKey:key adcode:nil];
+	self.searchHistoryTableView.hidden = YES;
+    [searchBar resignFirstResponder];
 }
 
 //文字改变
@@ -202,14 +170,10 @@
 {
 	if(searchText.length > 0)
 	{
-		[self.alternativeAddressesM removeAllObjects];
+		[self searchTipsWithKey:searchText];
+	}else{
+		[self.tips removeAllObjects];
 		[self.searchHistoryTableView reloadData];
-		__weak __typeof(self)weakSelf = self;
-		dispatch_queue_t concurrentQueue = dispatch_queue_create("getGeocodeWithAddress.concurrent.queue", DISPATCH_QUEUE_CONCURRENT);
-		dispatch_async(concurrentQueue, ^(){
-			[weakSelf getGeocodeWithAddress:weakSelf.searchBar.text];
-		});
-		
 	}
 }
 
@@ -254,7 +218,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	if(section == 0){
-		return self.alternativeAddressesM.count;
+		return self.tips.count;
 	}else{
 		return self.historyAddressM.count;
 	}
@@ -273,10 +237,9 @@
 	
 	if(indexPath.section == 0)
 	{
-		//推荐地址
-		if(self.alternativeAddressesM.count >0){
-			cell.textLabel.text		 = [(CLPlacemark *)self.alternativeAddressesM[indexPath.row] name];
-		}
+		AMapTip *tip = self.tips[indexPath.row];
+		
+		cell.textLabel.text = tip.name;
 	}else{
 		//历史地址
 		if(self.historyAddressM.count >0){
@@ -290,179 +253,162 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(tableView == self.searchHistoryTableView){
-        
-        self.searchBar.text = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-        [self.searchBar endEditing:YES];
-    }
+	AMapTip *tip = self.tips[indexPath.row];
+	
+	[self clearAndSearchGeocodeWithKey:tip.name adcode:tip.adcode];
+	self.searchHistoryTableView.hidden = YES;
+	self.searchBar.text = tip.name;
+	[self.searchBar endEditing:YES];
 }
 
-#pragma mark - MKMapViewDelegate
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    switch (status) {
-        case kCLAuthorizationStatusNotDetermined:
-            if ([self.locationMgr respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-                [self.locationMgr requestWhenInUseAuthorization];
-            }
-            break;
-        default:
-            break;
-    }
+
+- (IBAction)tabBarConfirmBtnClick:(UIButton *)sender {
 }
 
-/**
- *  当用户的位置更新，就会调用（不断地监控用户的位置，调用频率特别高）
- *
- *  @param userLocation 表示地图上蓝色那颗大头针的数据
- */
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+#pragma mark - MAMapViewDelegate
+
+- (void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    userLocation.title    = @"您的位置";
-    userLocation.subtitle = @"您当前所在位置";
-	self.userLocation = userLocation;
-//    CLLocationCoordinate2D center = userLocation.location.coordinate;
-//    FZ_LOG(@"%f %f", center.latitude, center.longitude);
-	
-    // 设置地图的中心点（以用户所在的位置为中心点）
-//    [mapView setCenterCoordinate:userLocation.location.coordinate animated:YES];
-    
-    // 设置地图的显示范围
-//    MKCoordinateSpan span = MKCoordinateSpanMake(0.021321, 0.019366);
-//    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
-//    [mapView setRegion:region animated:YES];
+	if ([view.annotation isKindOfClass:[GeocodeAnnotation class]])
+	{
+		[self gotoDetailForGeocode:[(GeocodeAnnotation*)view.annotation geocode]];
+	}
 }
 
-/**
- *  地理编码
- */
-- (void)getGeocodeWithAddress:(NSString *)address {
-	if (address.length == 0) return;
-	
-	__weak __typeof(self)weakSelf = self;
-	[self.geocoder geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
-		if (error) {
-			// 有错误（地址乱输入）
-			FZ_LOG(@"没有找到这个地址");
-		} else {
-			NSMutableArray *distanceArrayM = [NSMutableArray array];
-			for (CLPlacemark *pm in placemarks) {
-				[weakSelf.alternativeAddressesM addObject:pm];
-				double lat = pm.location.coordinate.latitude;
-				double lon = pm.location.coordinate.longitude;
-				double distance = [weakSelf distanceBetweenOrderBylat1:lat lat2:self.userLocation.coordinate.latitude lon1:lon lon2:self.userLocation.coordinate.longitude];
-				[distanceArrayM addObject:[NSNumber numberWithDouble:distance]];
-			}
-			//排序
-			for(int i=0; i<distanceArrayM.count; i++)
-			{
-				for(int j =i; j<distanceArrayM.count; j++)
-				{
-					if ([distanceArrayM[i] doubleValue] > [distanceArrayM[j] doubleValue]) {
-						[distanceArrayM exchangeObjectAtIndex:i withObjectAtIndex:j];
-						[self.alternativeAddressesM exchangeObjectAtIndex:i withObjectAtIndex:j];
-					}
-				}
-			}
-			
-			for (NSNumber *distance in distanceArrayM) {
-				FZ_LOG(@"%@",distance);
-			}
-			//加载完数据后 刷新表格
-			dispatch_async(dispatch_get_main_queue(), ^{
-				[weakSelf.searchHistoryTableView reloadData];
-			});
-			
-			// 编码成功
-			// 取出最前面的地址
-			CLPlacemark *pm = [placemarks firstObject];
-			
-			// 设置经纬度
-			FZ_LOG(@"%@",[NSString stringWithFormat:@"%f", pm.location.coordinate.latitude]);
-			FZ_LOG(@"%@",[NSString stringWithFormat:@"%f", pm.location.coordinate.longitude]);
-			
-			// 设置具体地址
-			FZ_LOG(@"%@",pm.name);
-			
-			NSLog(@"总共找到%ld个地址", placemarks.count);
-
-			for (CLPlacemark *pm in placemarks) {
-				NSLog(@"-----地址开始----");
-
-				NSLog(@"%f %f %@", pm.location.coordinate.latitude, pm.location.coordinate.longitude, pm.name);
-
-				[pm.addressDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-					NSLog(@"%@ %@", key, obj);
-				}];
-
-				NSLog(@"-----地址结束----");
-			}
-			
-			
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+{
+	if ([annotation isKindOfClass:[GeocodeAnnotation class]])
+	{
+		static NSString *geoCellIdentifier = @"geoCellIdentifier";
+		
+		MAPinAnnotationView *poiAnnotationView = (MAPinAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:geoCellIdentifier];
+		if (poiAnnotationView == nil)
+		{
+			poiAnnotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:geoCellIdentifier];
 		}
+		
+		poiAnnotationView.canShowCallout			= YES;
+		poiAnnotationView.animatesDrop              = YES;
+		poiAnnotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+		
+		return poiAnnotationView;
+	}
+	
+	return nil;
+}
+
+#pragma mark - AMapSearchDelegate
+
+/* 地理编码回调.*/
+- (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
+{
+	if (response.geocodes.count == 0)
+	{
+		return;
+	}
+	
+    __block NSMutableArray *annotations = [NSMutableArray array];
+
+	[response.geocodes enumerateObjectsUsingBlock:^(AMapGeocode *obj, NSUInteger idx, BOOL *stop) {
+		GeocodeAnnotation *geocodeAnnotation = [[GeocodeAnnotation alloc] initWithGeocode:obj];
+		
+		[annotations addObject:geocodeAnnotation];
 	}];
 	
+	if (annotations.count == 1)
+	{
+		[self.mapView setCenterCoordinate:[annotations[0] coordinate] animated:YES];
+		self.tabBarLabel.text = self.searchBar.text;
+	}
+	else{
+		[self.mapView setVisibleMapRect:[CommonMapUtility minMapRectForAnnotations:annotations] edgePadding:UIEdgeInsetsMake(kMapEdgePadding, kMapEdgePadding, kMapEdgePadding, kMapEdgePadding) animated:YES];
+		self.tabBarLabel.text = @"请选择地点";
+	}
+	[self.mapView addAnnotations:annotations];
+}
+
+/* 输入提示回调. */
+- (void)onInputTipsSearchDone:(AMapInputTipsSearchRequest *)request response:(AMapInputTipsSearchResponse *)response
+{
+	[self.tips setArray:response.tips];
+	[self.searchHistoryTableView reloadData];
+}
+
+#pragma mark - Map Utility
+
+/* 地理编码 搜索. */
+- (void)searchGeocodeWithKey:(NSString *)key adcode:(NSString *)adcode
+{
+	if (key.length == 0)
+	{
+		return;
+	}
 	
-}
-
-/**
- *  获取两点经纬度地址的方法 返回的单位是公里
- *  @return A，B连点的距离
- */
--(double)distanceBetweenOrderBylat1:(double)lat1 lat2:(double)lat2 lon1:(double)lng1 lon2:(double)lng2{
-	double dd = M_PI/180;
-	double x1=lat1*dd,x2=lat2*dd;
-	double y1=lng1*dd,y2=lng2*dd;
-	double R = 6371004;
-	double distance = (2*R*asin(sqrt(2-2*cos(x1)*cos(x2)*cos(y1-y2) - 2*sin(x1)*sin(x2))/2));
-	//km  返回
-	//     return  distance*1000;
+	AMapGeocodeSearchRequest *geo = [[AMapGeocodeSearchRequest alloc] init];
+	geo.address = key;
 	
-	//返回 公里
-	return   distance/1000;
- 
+	if (adcode.length > 0)
+	{
+		geo.city = @[adcode];
+	}
+	
+	[self.search AMapGeocodeSearch:geo];
 }
 
-/**
- *  反地理编码
- */
-//- (IBAction)getAddressWithGeocode: {
-//	// 1.包装位置
-//	CLLocationDegrees latitude = [self.latitudeField.text doubleValue];
-//	CLLocationDegrees longitude = [self.longtitudeField.text doubleValue];
-//	CLLocation *loc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
-//	
-//	// 2.反地理编码
-//	[self.geocoder reverseGeocodeLocation:loc completionHandler:^(NSArray *placemarks, NSError *error) {
-//		if (error) { // 有错误（地址乱输入）
-//			self.reverseDetailAddressLabel.text = @"你找的地址可能只在火星有！！！";
-//		} else { // 编码成功
-//			// 取出最前面的地址
-//			CLPlacemark *pm = [placemarks firstObject];
-//			
-//			// 设置具体地址
-//			self.reverseDetailAddressLabel.text = pm.name;
-//			//            NSLog(@"总共找到%d个地址", placemarks.count);
-//			//
-//			//            for (CLPlacemark *pm in placemarks) {
-//			//                NSLog(@"-----地址开始----");
-//			//
-//			//                NSLog(@"%f %f %@", pm.location.coordinate.latitude, pm.location.coordinate.longitude, pm.name);
-//			//
-//			//                [pm.addressDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-//			//                    NSLog(@"%@ %@", key, obj);
-//			//                }];
-//			//
-//			//                NSLog(@"-----地址结束----");
-//			//            }
-//		}
-//	}];
-//}
-
-
-//回到用户位置
-- (void)backToUserLocation {
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+/* 输入提示 搜索.*/
+- (void)searchTipsWithKey:(NSString *)key
+{
+	if (key.length == 0)
+	{
+		return;
+	}
+	
+	AMapInputTipsSearchRequest *tips = [[AMapInputTipsSearchRequest alloc] init];
+	tips.keywords = key;
+	[self.search AMapInputTipsSearch:tips];
 }
-- (IBAction)tabBarConfirmBtnClick:(UIButton *)sender {
+
+/* 清除annotation. */
+- (void)clear
+{
+	[self.mapView removeAnnotations:self.mapView.annotations];
+}
+
+- (void)clearAndSearchGeocodeWithKey:(NSString *)key adcode:(NSString *)adcode
+{
+	/* 清除annotation. */
+	[self clear];
+	[self searchGeocodeWithKey:key adcode:adcode];
+}
+
+//跳转到详情控制器
+- (void)gotoDetailForGeocode:(AMapGeocode *)geocode
+{
+	if (geocode != nil)
+	{
+		//		GeoDetailViewController *geoDetailViewController = [[GeoDetailViewController alloc] init];
+		//		geoDetailViewController.geocode = geocode;
+		//
+		//		[self.navigationController pushViewController:geoDetailViewController animated:YES];
+	}
+}
+
+#pragma mark 懒加载
+
+- (NSMutableArray *)historyAddressM
+{
+	if(_historyAddressM == nil)
+	{
+		_historyAddressM = [NSMutableArray array];
+	}
+	return _historyAddressM;
+}
+- (NSMutableArray *)tips
+{
+	if(_tips == nil)
+	{
+		_tips = [NSMutableArray array];
+	}
+	return _tips;
 }
 @end
