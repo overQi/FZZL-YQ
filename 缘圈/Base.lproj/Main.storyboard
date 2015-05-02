@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -101,9 +102,12 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-hX-Bcp" userLabel="LockView" customClass="MJLockView">
-                                <rect key="frame" x="10" y="109" width="300" height="300"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-hX-Bcp" userLabel="LockView" customClass="MJLockView">
+                                <rect key="frame" x="10" y="134" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gEP-hX-Bcp" secondAttribute="height" multiplier="1:1" id="BhI-LK-tPf"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="N5y-zC-UND" id="3IW-5h-3Qm"/>
                                 </connections>
@@ -111,13 +115,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gEP-hX-Bcp" firstAttribute="width" secondItem="hJr-mA-osG" secondAttribute="width" constant="-20" id="BHF-J1-CxW"/>
                             <constraint firstItem="UOk-HQ-2Li" firstAttribute="top" secondItem="gEP-hX-Bcp" secondAttribute="bottom" constant="110" id="EhT-wJ-xTc"/>
                             <constraint firstAttribute="centerX" secondItem="57k-A5-H5z" secondAttribute="centerX" id="Jks-sh-XFu"/>
                             <constraint firstAttribute="centerX" secondItem="gEP-hX-Bcp" secondAttribute="centerX" id="Qf1-3L-Vdl"/>
                             <constraint firstItem="gEP-hX-Bcp" firstAttribute="width" secondItem="hJr-mA-osG" secondAttribute="width" constant="-20" id="TBe-rO-DcP"/>
                             <constraint firstAttribute="centerX" secondItem="57k-A5-H5z" secondAttribute="centerX" id="Twq-vn-vYz"/>
+                            <constraint firstItem="gEP-hX-Bcp" firstAttribute="centerX" secondItem="hJr-mA-osG" secondAttribute="centerX" id="X8h-pg-8O8"/>
                             <constraint firstAttribute="centerX" secondItem="gEP-hX-Bcp" secondAttribute="centerX" id="ajm-AW-FDp"/>
                             <constraint firstItem="57k-A5-H5z" firstAttribute="width" secondItem="hJr-mA-osG" secondAttribute="width" id="cLV-pP-sSp"/>
+                            <constraint firstItem="gEP-hX-Bcp" firstAttribute="centerY" secondItem="hJr-mA-osG" secondAttribute="centerY" id="iSi-Hd-n9P"/>
                             <constraint firstAttribute="centerY" secondItem="gEP-hX-Bcp" secondAttribute="centerY" id="k12-eX-JVO"/>
                             <constraint firstItem="UOk-HQ-2Li" firstAttribute="top" secondItem="57k-A5-H5z" secondAttribute="bottom" constant="8" id="sTj-hs-lDR"/>
                             <constraint firstItem="57k-A5-H5z" firstAttribute="bottom" secondItem="UOk-HQ-2Li" secondAttribute="top" id="y4y-9V-sZv"/>
