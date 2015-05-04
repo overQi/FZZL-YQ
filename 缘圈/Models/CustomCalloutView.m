@@ -24,8 +24,7 @@
 
 #pragma mark - draw rect
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect{
     
     [self drawInContext:UIGraphicsGetCurrentContext()];
     

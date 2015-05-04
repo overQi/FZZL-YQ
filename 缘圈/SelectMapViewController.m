@@ -12,6 +12,7 @@
 #import "MBProgressHUD+HP.h"
 #import "CommonMapUtility.h"
 #import "GeocodeAnnotation.h"
+#import "OfflineDetailViewController.h"
 
 @interface SelectMapViewController ()<UISearchBarDelegate,UISearchDisplayDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *mapViewContent;
@@ -43,7 +44,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 	//用户位置追踪
-	[self.mapView addObserver:self forKeyPath:@"showsUserLocation" options:NSKeyValueObservingOptionNew context:nil];
+//	[self.mapView addObserver:self forKeyPath:@"showsUserLocation" options:NSKeyValueObservingOptionNew context:nil];
 	
 }
 
@@ -60,7 +61,7 @@
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	self.mapView.userTrackingMode  = MAUserTrackingModeNone;
-	[self.mapView removeObserver:self forKeyPath:@"showsUserLocation"];
+//	[self.mapView removeObserver:self forKeyPath:@"showsUserLocation"];
 }
 
 #pragma mark 自定义函数
@@ -84,6 +85,7 @@
 	
     self.title = @"地图";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelButtonClick)];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"离线地图" style:UIBarButtonItemStyleDone target:self action:@selector(offLineMapButtonClick)];
 	
 }
 
@@ -93,6 +95,28 @@
 	for (int i =0; i<30; i++) {
 		[self.historyAddressM addObject:[NSString stringWithFormat:@"历史地址%d",i]];
 	}
+}
+
+//点击了取消按钮
+- (void)cancelButtonClick
+{
+	[self dismissViewControllerAnimated:YES completion:^{
+		
+	}];
+}
+
+//点击了离线地图按钮
+- (void)offLineMapButtonClick
+{
+	OfflineDetailViewController *detailViewController = [[OfflineDetailViewController alloc] init];
+	detailViewController.mapView = self.mapView;
+	detailViewController.modalTransitionStyle =UIModalTransitionStyleFlipHorizontal;
+	
+	HP_NavigationController *nav = [[HP_NavigationController alloc] initWithRootViewController:detailViewController];
+	
+	[self presentViewController:nav animated:YES completion:^{
+		
+	}];
 }
 
 #pragma mark NSKeyValueObservering 键盘
@@ -129,20 +153,15 @@
 	}];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-	if ([keyPath isEqualToString:@"showsUserLocation"])
-	{
-		FZ_LOG(@"用户位置改变");
-	}
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+//{
+//	if ([keyPath isEqualToString:@"showsUserLocation"])
+//	{
+//		FZ_LOG(@"用户位置改变");
+//	}
+//}
 
-- (void)cancelButtonClick
-{
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-}
+
 #pragma mark searchBar代理
 //点击取消
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
@@ -271,8 +290,19 @@
 {
 	if ([view.annotation isKindOfClass:[GeocodeAnnotation class]])
 	{
+		
 		[self gotoDetailForGeocode:[(GeocodeAnnotation*)view.annotation geocode]];
 	}
+}
+
+- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view
+{
+	[self.mapView setCenterCoordinate:[view.annotation coordinate] animated:YES];
+	if([[view.annotation title] isEqualToString:@"当前位置"])
+	{
+		return;
+	}
+	self.tabBarLabel.text = [view.annotation title];
 }
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
@@ -379,6 +409,7 @@
 	/* 清除annotation. */
 	[self clear];
 	[self searchGeocodeWithKey:key adcode:adcode];
+	
 }
 
 //跳转到详情控制器

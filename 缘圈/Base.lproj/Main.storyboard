@@ -189,11 +189,11 @@
                                                     <constraint firstAttribute="height" constant="1" id="IBG-VI-liH"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择地点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S82-Xd-VxD">
-                                                <rect key="frame" x="20" y="0.0" width="200" height="44"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择地点" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="S82-Xd-VxD">
+                                                <rect key="frame" x="20" y="0.0" width="240" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="g7s-zI-mQW"/>
-                                                    <constraint firstAttribute="width" constant="200" id="gBA-Vw-OvP"/>
+                                                    <constraint firstAttribute="width" constant="240" id="gBA-Vw-OvP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

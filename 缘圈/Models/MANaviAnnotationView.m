@@ -11,6 +11,23 @@
 #define naviButtonWidth 44
 #define naviButtonHeight 74
 
+@implementation MANaviAnnotationView
+
+- (id)initWithAnnotation:(id <MAAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        NaviButton *naviButton = [[NaviButton alloc] initWithFrame:(CGRectMake(0, 0, naviButtonWidth, naviButtonHeight))];
+        
+        self.leftCalloutAccessoryView = naviButton;
+    }
+    return self;
+}
+
+@end
+
+
 @implementation NaviButton
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -47,22 +64,6 @@
     _carImageView.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.superview.frame) - CGRectGetHeight(_carImageView.frame) * (0.5 + kMarginRatio));
     
     _naviLabel.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.superview.frame) + CGRectGetHeight(_naviLabel.frame) * (0.5 + kMarginRatio));
-}
-
-@end
-
-@implementation MANaviAnnotationView
-
-- (id)initWithAnnotation:(id <MAAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-    if (self)
-    {
-        NaviButton *naviButton = [[NaviButton alloc] initWithFrame:(CGRectMake(0, 0, naviButtonWidth, naviButtonHeight))];
-        
-        self.leftCalloutAccessoryView = naviButton;
-    }
-    return self;
 }
 
 @end

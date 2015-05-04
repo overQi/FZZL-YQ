@@ -6,7 +6,12 @@
 //  Copyright (c) 2013年 songjian. All rights reserved.
 //
 
+#import "MBProgressHUD+HP.h"
 #import "BaseMapViewController.h"
+
+@interface BaseMapViewController()
+@property (nonatomic, strong, readwrite) MAMapStatus * lastStatus;
+@end
 
 @implementation BaseMapViewController
 @synthesize mapView = _mapView;
@@ -16,15 +21,18 @@
 
 - (void)clearMapView
 {
-    self.mapView.showsUserLocation = NO;
-    
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    
-    [self.mapView removeOverlays:self.mapView.overlays];
-    
-    self.mapView.delegate = nil;
+	self.mapView.showsUserLocation = NO;
+	
+	[self.mapView removeAnnotations:self.mapView.annotations];
+	
+	[self.mapView removeOverlays:self.mapView.overlays];
+	
+	[self.mapView setMapStatus: _lastStatus animated:NO duration:0];
+	
+	self.mapView.delegate = nil;
+	
+	[self.mapView setCompassImage:nil];
 }
-
 - (void)clearSearch
 {
     self.search.delegate = nil;
@@ -45,7 +53,8 @@
 
 - (void)searchRequest:(id)request didFailWithError:(NSError *)error
 {
-    NSLog(@"%s: searchRequest = %@, errInfo= %@", __func__, [request class], error);
+    FZ_LOG(@"%s: searchRequest = %@, errInfo= %@", __func__, [request class], error);
+	[MBProgressHUD showError:error.localizedDescription];
 }
 
 #pragma mark - Initialization
@@ -54,7 +63,7 @@
 {
 	self.mapView = [[MAMapView alloc] init];
     self.mapView.delegate = self;
-	
+	_lastStatus = [self.mapView getMapStatus];
 }
 
 - (void)initSearch

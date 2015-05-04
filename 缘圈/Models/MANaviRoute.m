@@ -198,7 +198,7 @@
         points[1] = endCoor;
         
         MAPolyline *polyline = [MAPolyline polylineWithCoordinates:points count:2];
-        LineDashPolyline *dathPolyline = [[LineDashPolyline alloc] initWithPolyline:polyline];
+        LineDashPolyline *dathPolyline = [[LineDashPolyline alloc]initWithPolyline:polyline];
         dathPolyline.polyline = polyline;
         [polylines addObject:dathPolyline];
         
@@ -228,7 +228,7 @@
                 points[1] = startCoor;
                 
                 MAPolyline *polyline = [MAPolyline polylineWithCoordinates:points count:2];
-                LineDashPolyline *dathPolyline = [[LineDashPolyline alloc] initWithPolyline:polyline];
+                LineDashPolyline *dathPolyline = [[LineDashPolyline alloc]initWithPolyline:polyline];
                 dathPolyline.polyline = polyline;
                 [polylines addObject:dathPolyline];
             }
@@ -290,7 +290,7 @@
         points[1] = endCoor ;
         
         MAPolyline *polyline = [MAPolyline polylineWithCoordinates:points count:2];
-        LineDashPolyline *dathPolyline = [[LineDashPolyline alloc] initWithPolyline:polyline];
+        LineDashPolyline *dathPolyline = [[LineDashPolyline alloc]initWithPolyline:polyline];
         dathPolyline.polyline = polyline;
         [polylines addObject:dathPolyline];
     }
