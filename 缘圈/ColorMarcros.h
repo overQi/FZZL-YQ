@@ -14,5 +14,5 @@
 #define kNavigationBackgroundColor [UIColor colorWithRed:0.285 green:0.523 blue:0.964 alpha:1.00]
 #define kYuanQuanBtnTextDayColor      [UIColor colorWithRed:0.934 green:0.618 blue:0.246 alpha:1.000]
 #define kYuanQuanBtnTextNightColor      [UIColor colorWithRed:0.051 green:0.467 blue:0.867 alpha:1.000]
-#define kNavButtonColor [UIColor whiteColor];
+#define kNavButtonColor [UIColor blueColor];
 #endif

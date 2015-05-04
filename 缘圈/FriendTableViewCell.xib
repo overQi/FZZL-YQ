@@ -118,7 +118,7 @@
                 <outlet property="verifyLabel" destination="vsy-8x-EBe" id="6kW-Ee-Rn8"/>
                 <outlet property="workPlaceLabel" destination="aE8-p7-hI2" id="g9A-Np-UhO"/>
             </connections>
-            <point key="canvasLocation" x="530" y="413"/>
+            <point key="canvasLocation" x="600" y="341"/>
         </tableViewCell>
     </objects>
 </document>

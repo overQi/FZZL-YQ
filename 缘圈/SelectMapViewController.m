@@ -85,7 +85,8 @@
 	
     self.title = @"地图";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelButtonClick)];
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"离线地图" style:UIBarButtonItemStyleDone target:self action:@selector(offLineMapButtonClick)];
+    //目前不加离线地图功能
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"离线地图" style:UIBarButtonItemStyleDone target:self action:@selector(offLineMapButtonClick)];
 	
 }
 

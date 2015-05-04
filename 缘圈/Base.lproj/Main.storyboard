@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kkh-32-VxS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kkh-32-VxS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -168,13 +168,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBh-zd-nMV" userLabel="contentView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wRl-DM-bkI">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="slk-Ct-mdd"/>
-                                        </constraints>
-                                        <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                                    </searchBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKL-Vx-5PG" userLabel="Map View">
                                         <rect key="frame" x="0.0" y="44" width="320" height="392"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -254,9 +247,17 @@
                                         <rect key="frame" x="0.0" y="44" width="320" height="392"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wRl-DM-bkI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="slk-Ct-mdd"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="wRl-DM-bkI" firstAttribute="top" secondItem="fBh-zd-nMV" secondAttribute="top" id="9Nu-xg-DQm"/>
                                     <constraint firstItem="wRl-DM-bkI" firstAttribute="top" secondItem="fBh-zd-nMV" secondAttribute="top" id="A7i-pu-9aG"/>
                                     <constraint firstAttribute="trailing" secondItem="UKL-Vx-5PG" secondAttribute="trailing" id="BYG-9W-EgY"/>
                                     <constraint firstAttribute="bottom" secondItem="Vp3-AY-0kY" secondAttribute="bottom" id="HQW-8Q-WRz"/>
@@ -273,6 +274,11 @@
                                     <constraint firstAttribute="trailing" secondItem="Vp3-AY-0kY" secondAttribute="trailing" id="q0U-Dg-qkD"/>
                                     <constraint firstItem="biy-Lo-sa3" firstAttribute="leading" secondItem="fBh-zd-nMV" secondAttribute="leading" id="zhU-xa-HuP"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="A7i-pu-9aG"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -281,16 +287,19 @@
                             <constraint firstItem="fBh-zd-nMV" firstAttribute="leading" secondItem="Q9f-5x-7na" secondAttribute="leading" id="JsY-6k-Bgi"/>
                             <constraint firstItem="fBh-zd-nMV" firstAttribute="top" secondItem="Q9f-5x-7na" secondAttribute="top" id="MvC-Cr-kTP"/>
                             <constraint firstAttribute="bottom" secondItem="fBh-zd-nMV" secondAttribute="bottom" id="PFt-dx-aMw"/>
+                            <constraint firstItem="fBh-zd-nMV" firstAttribute="top" secondItem="Q9f-5x-7na" secondAttribute="topMargin" id="gxF-s2-wH2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fBh-zd-nMV" secondAttribute="trailing" constant="-7" id="nA5-tO-pxQ"/>
                             <constraint firstItem="fBh-zd-nMV" firstAttribute="leading" secondItem="Q9f-5x-7na" secondAttribute="leadingMargin" id="rGa-ET-pPS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="MvC-Cr-kTP"/>
                                 <exclude reference="nA5-tO-pxQ"/>
                                 <exclude reference="rGa-ET-pPS"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="ISl-jb-Nvo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buttomTabBar" destination="Vp3-AY-0kY" id="9h0-wM-jix"/>
@@ -303,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEN-Zf-a4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981" y="187"/>
+            <point key="canvasLocation" x="2180" y="169"/>
         </scene>
         <!--消息-->
         <scene sceneID="21K-Bd-XXi">
@@ -390,12 +399,38 @@
                             <outlet property="delegate" destination="x8v-SQ-nTm" id="8w4-qH-9Gu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的" id="XC0-vl-Wna"/>
+                    <navigationItem key="navigationItem" title="我的" id="XC0-vl-Wna">
+                        <barButtonItem key="rightBarButtonItem" title="临时跳转" id="Ds0-Yd-Zaj">
+                            <connections>
+                                <segue destination="C9p-yS-yFH" kind="push" id="IZg-1h-HEc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHI-c5-kXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1575" y="1329"/>
+        </scene>
+        <!--My Info View Controller-->
+        <scene sceneID="5xk-iA-1uf">
+            <objects>
+                <tableViewController id="C9p-yS-yFH" customClass="MyInfoViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="76v-L7-nQT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="C9p-yS-yFH" id="fCf-Y8-ldw"/>
+                            <outlet property="delegate" destination="C9p-yS-yFH" id="vIf-sg-DDh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="8O6-Vo-j3s"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ro-lm-tu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040" y="1329"/>
         </scene>
         <!--我的-->
         <scene sceneID="7Ff-ly-9fl">

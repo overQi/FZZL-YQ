@@ -33,9 +33,9 @@
 	//按钮
 	UIBarButtonItem *item = [UIBarButtonItem appearance];
 
-    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background_pushed"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background_disable"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
+//    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background_pushed"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    [item setBackgroundImage:[UIImage imageNamed:@"navigationbar_button_background_disable"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
 	
 	
 	//按钮文字
@@ -62,12 +62,15 @@
 {
 	UINavigationBar *navBarAppearance = [UINavigationBar appearance];
 	//背景
-	
-    [navBarAppearance setBackgroundImage:[UIImage getImageFromColor:kNavigationBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+	if(!IOS7){
+        [navBarAppearance setBackgroundImage:[UIImage getImageFromColor:kNavigationBackgroundColor] forBarMetrics:UIBarMetricsDefault];
+    }else
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-	
-    [navBarAppearance setTranslucent:NO];
-    
+    if(!IOS7){
+        [navBarAppearance setTranslucent:NO];
+    }else{
+        navBarAppearance.alpha = 1.0;
+    }
 	//标题
 	NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSForegroundColorAttributeName]  = [UIColor whiteColor];
@@ -75,7 +78,7 @@
 	attrs[NSFontAttributeName] = kNavTitleFont;
 	[navBarAppearance setTitleTextAttributes:attrs];
 	
-	navBarAppearance.tintColor = [UIColor orangeColor];
+//	navBarAppearance.tintColor = [UIColor blueColor];
 	
 }
 - (void)viewDidLoad {

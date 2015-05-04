@@ -54,6 +54,8 @@
 		D912BE411AEDD3D800F19108 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D912BE401AEDD3D800F19108 /* FriendModel.m */; };
 		D97C92121AF705860093152B /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97C92101AF705860093152B /* AMapSearchKit.framework */; };
 		D97C92131AF705860093152B /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97C92111AF705860093152B /* MAMapKit.framework */; };
+		D97C92191AF712E20093152B /* testicon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97C92181AF712E20093152B /* testicon.jpg */; };
+		D97C92211AF7153D0093152B /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97C92201AF7153D0093152B /* MyInfoViewController.m */; };
 		D9833BA61AEA20790092566A /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D9833B981AEA20790092566A /* MJPhoto.m */; };
 		D9833BA71AEA20790092566A /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D9833B991AEA20790092566A /* MJPhotoBrowser.bundle */; };
 		D9833BA81AEA20790092566A /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D9833B9B1AEA20790092566A /* MJPhotoBrowser.m */; };
@@ -237,6 +239,9 @@
 		D912BE401AEDD3D800F19108 /* FriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendModel.m; sourceTree = "<group>"; };
 		D97C92101AF705860093152B /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		D97C92111AF705860093152B /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		D97C92181AF712E20093152B /* testicon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testicon.jpg; sourceTree = "<group>"; };
+		D97C921F1AF7153D0093152B /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
+		D97C92201AF7153D0093152B /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
 		D9833B971AEA20790092566A /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
 		D9833B981AEA20790092566A /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
 		D9833B991AEA20790092566A /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
@@ -558,6 +563,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		D97C92171AF712D40093152B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D97C92181AF712E20093152B /* testicon.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		D9833B961AEA20790092566A /* MJPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,6 +857,8 @@
 		D9E1AE161AEA19C6006257F5 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				D97C921F1AF7153D0093152B /* MyInfoViewController.h */,
+				D97C92201AF7153D0093152B /* MyInfoViewController.m */,
 			);
 			name = "我的";
 			sourceTree = "<group>";
@@ -914,6 +929,7 @@
 		D9F465891AEA0BF800884829 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D97C92171AF712D40093152B /* Images */,
 				D9F465931AEA0BF800884829 /* Main.storyboard */,
 				D9F465961AEA0BF800884829 /* Images.xcassets */,
 				D9F465981AEA0BF800884829 /* LaunchScreen.xib */,
@@ -1074,6 +1090,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D97C92191AF712E20093152B /* testicon.jpg in Resources */,
 				74AD97241AF5C2E200A12F64 /* AMap.bundle in Resources */,
 				D9833BA71AEA20790092566A /* MJPhotoBrowser.bundle in Resources */,
 				D9F465951AEA0BF800884829 /* Main.storyboard in Resources */,
@@ -1113,6 +1130,7 @@
 				D9E1ADFF1AEA0DA3006257F5 /* MJRefreshFooter.m in Sources */,
 				74AD974F1AF5C35C00A12F64 /* GeocodeAnnotation.m in Sources */,
 				D9E1AC9B1AEA0D02006257F5 /* UIImageView+HighlightedWebCache.m in Sources */,
+				D97C92211AF7153D0093152B /* MyInfoViewController.m in Sources */,
 				D9E1AE251AEA1DF3006257F5 /* MBProgressHUD+MJ.m in Sources */,
 				D9E1AE051AEA0DA3006257F5 /* UIScrollView+MJExtension.m in Sources */,
 				741F378A1AEC8BD7001A62CB /* UserModel.m in Sources */,
