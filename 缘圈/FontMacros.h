@@ -13,4 +13,8 @@
 #define kNavTitleFont [UIFont systemFontOfSize:16]
 #define kNavButtonFont [UIFont systemFontOfSize:16]
 #define kYuanQuanBtnFont  [UIFont boldSystemFontOfSize:12]
+
+// 好友
+#define kFriendHeadTitleFont [UIFont systemFontOfSize:18]
+
 #endif

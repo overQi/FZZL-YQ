@@ -14,14 +14,14 @@
 #import "SelectMapViewController.h"
 #import "HP_NavigationController.h"
 
-
-
 @interface DestinyViewController ()<BaseViewControllerDelegate,MJLockViewDelegate>
+
 @property (strong, nonatomic) IBOutlet MJLockView *lockView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageInbottom;
 
 @end
+
 
 @implementation DestinyViewController
 #pragma mark 懒加载

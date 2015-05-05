@@ -27,7 +27,7 @@
     HP_BaseTabBarController *tab = (HP_BaseTabBarController *)self.window.rootViewController;
 	
 	//默认选中第1个控制器
-    tab.selectedViewController = tab.viewControllers[1];
+    tab.selectedViewController = tab.viewControllers[3];
  
 	
     return YES;

@@ -34,4 +34,5 @@
 #import "ColorMarcros.h"
 #import "FrameMarcros.h"
 #import "DeviceMacros.h"
+#import "UIView+Extension.h"
 #endif

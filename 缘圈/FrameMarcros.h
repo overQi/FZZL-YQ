@@ -12,4 +12,8 @@
 //frame设置
 #define kOrderDetailPadding 10;
 
+// YQMesageController
+#define kMessageUserVTopMargin 10
+#define kMessageUserVLeftMargin 10
+
 #endif

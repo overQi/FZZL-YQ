@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kkh-32-VxS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kkh-32-VxS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -30,31 +30,23 @@
             <point key="canvasLocation" x="245" y="459"/>
         </scene>
         <!--消息-->
-        <scene sceneID="Yes-MR-cRi">
+        <scene sceneID="6RY-ya-EJT">
             <objects>
-                <tableViewController id="X4H-5m-X15" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="N3X-8Z-10k">
+                <viewController id="EhW-ku-5US" customClass="YQMesageController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vkW-U0-IJh"/>
+                        <viewControllerLayoutGuide type="bottom" id="o5p-Gc-uCl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uDb-vG-RLW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Thy-YI-NUp">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Thy-YI-NUp" id="PnK-f8-rT7">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="X4H-5m-X15" id="7jg-LS-GRw"/>
-                            <outlet property="delegate" destination="X4H-5m-X15" id="l7p-Dr-MlK"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="消息" id="j4F-c6-PvM"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wMn-ow-hUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="消息" id="Fdl-MO-WWd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z1b-WK-Nb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1558" y="-425"/>
+            <point key="canvasLocation" x="1597" y="-425"/>
         </scene>
         <!--缘圈-->
         <scene sceneID="GT4-FT-Obf">
@@ -325,7 +317,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="X4H-5m-X15" kind="relationship" relationship="rootViewController" id="p0e-UI-YQI"/>
+                        <segue destination="EhW-ku-5US" kind="relationship" relationship="rootViewController" id="WIX-af-GwY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSK-OA-jFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,7 +327,7 @@
         <!--好友-->
         <scene sceneID="2s8-FE-wvC">
             <objects>
-                <tableViewController id="COL-WA-iKw" customClass="FriendTableViewController" sceneMemberID="viewController">
+                <tableViewController id="COL-WA-iKw" customClass="YQFriendController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tb2-tH-Ua5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +346,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="好友" id="P0q-U0-dJ8"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGR-sc-Sxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,7 +374,7 @@
         <!--我的-->
         <scene sceneID="NkK-6k-lvR">
             <objects>
-                <tableViewController id="x8v-SQ-nTm" sceneMemberID="viewController">
+                <tableViewController id="x8v-SQ-nTm" customClass="YQProfileController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4y2-kB-lNS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

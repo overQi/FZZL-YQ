@@ -7,9 +7,12 @@
 //
 
 #import "MyInfoViewController.h"
+#import "PhotosView.h"
 
-@interface MyInfoViewController ()
-@property (nonatomic,strong) NSMutableArray *detailInfoM;
+@interface MyInfoViewController ()<UIImagePickerControllerDelegate,PhotosViewDelegate>
+@property (nonatomic, strong) NSMutableArray *detailInfoM;
+@property (nonatomic, strong) PhotosView *photosView;
+@property (nonatomic, strong) NSArray *photos;
 @end
 
 @implementation MyInfoViewController
@@ -21,9 +24,13 @@
     [self setupData];
     
 }
-
+#pragma mark 自定义
 - (void)setupUI
 {
+    [self.photosView addImage:[UIImage imageNamed:@"jiahao"]];
+    [self.photosView addImage:[UIImage imageNamed:@"jiahao"]];
+    [self.photosView addImage:[UIImage imageNamed:@"jiahao"]];
+    [self.photosView addImage:[UIImage imageNamed:@"jiahao"]];
     
 }
 
@@ -38,8 +45,30 @@
     [self.detailInfoM addObject:@"居住"];
     [self.detailInfoM addObject:@"故乡"];
     [self.detailInfoM addObject:@"身份证号"];
-    
 }
+
+#pragma mark 图片选择
+- (void)showCamera
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:^{
+        
+    }];
+}
+
+- (void)showImagePicker
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    
+    [self presentViewController:imagePicker animated:YES completion:^{
+        
+    }];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -101,16 +130,30 @@
     
     footerLabel.font                 = [UIFont boldSystemFontOfSize:16];
     
-    CGFloat headerLabelX = 10.0;
+    CGFloat footerLabelX = 10.0;
     if(isNotiPhone6Plus){
-        headerLabelX = 15.0;
+        footerLabelX = 15.0;
     }else{
-        headerLabelX = 20.0;
+        footerLabelX = 20.0;
     }
-    footerLabel.frame                = CGRectMake(headerLabelX, 10, MainWidth, 22.0);
+    footerLabel.frame                = CGRectMake(footerLabelX, 10, MainWidth, 22.0);
 
     footerLabel.text                 = @"上传照片";
     [customView addSubview:footerLabel];
+    
+    
+    PhotosView *photosView = [[PhotosView alloc] init];
+//    photosView.backgroundColor = [UIColor redColor];
+    self.photosView = photosView;
+    photosView.delegate = self;
+    CGFloat photosX = 0;
+    CGFloat photosY = CGRectGetMaxY(footerLabel.frame)+5;
+    CGFloat photosW = customView.frame.size.width;
+    CGFloat photosH = 70;
+    
+    photosView.frame = CGRectMake(photosX, photosY, photosW, photosH);
+    [customView addSubview:photosView];
+    
     
     return customView;
 }
@@ -134,6 +177,24 @@
     return cell;
 }
 
+#pragma mark --imagePicker的代理方法
+/**无论是照相还是选择照片，完成后都会调用这个方法传递选中的照片,但是不会自动退出*/
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //退出选择器
+    [self dismissViewControllerAnimated:YES completion:^{}];
+    
+    UIImage *image = (UIImage *)info[@"UIImagePickerControllerOriginalImage"];
+    [self.photosView addImage:image];
+}
+
+#pragma mark photosView 代理
+- (void)photosViewClickImageAtIndex:(NSInteger)index
+{
+    FZ_LOG(@"%ld",index);
+}
+
+
 #pragma mark 懒加载
 - (NSMutableArray *)detailInfoM
 {
@@ -142,6 +203,15 @@
         _detailInfoM = [NSMutableArray array];
     }
     return _detailInfoM;
+}
+
+- (NSArray *)photos
+{
+    if(_photos == nil)
+    {
+        _photos = [NSArray array];
+    }
+    return _photos;
 }
 
 @end
