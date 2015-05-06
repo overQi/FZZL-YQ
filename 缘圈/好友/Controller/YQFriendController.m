@@ -48,23 +48,21 @@
 }
 
 
-#pragma mark - Table view data source & delegate
+#pragma mark - Table view datasource & delegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     UserDetailFrame *userDetailFrame = self.userDetailFrames[0];
 
     if (indexPath.row == 0) {//TODO: 第一个cell去除间距
     
     }
+    
     return userDetailFrame.cellHeight;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 50;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 20.0;
@@ -86,22 +84,18 @@
     }
     
     titleL.attributedText = [[NSAttributedString alloc] initWithString:title attributes:@{
-                                                                                          
                                                                                           NSFontAttributeName : kFriendHeadTitleFont,
                                                                                           NSForegroundColorAttributeName : kFriendHeadTitleColor,
                                                                                           }];
 
+
     [titleL sizeToFit];
     titleL.centerX = CGRectGetMidX(view.bounds);
     titleL.y = CGRectGetMidY(view.bounds);
-    
-//    NSLog(@"%f", CGRectGetMidX(self.view.frame));
-//    NSLog(@"%f", CGRectGetMidY(view.bounds));
 
     [view addSubview:titleL];
     return view;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0, self.view.width,20)];
@@ -109,12 +103,10 @@
 
     return view;
 }
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
@@ -124,7 +116,6 @@
         return 1;
     }
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UserHeadCell *cell = [UserHeadCell cellWithTableView:tableView];
@@ -134,6 +125,12 @@
     cell.userDetailFrame = userDetailFrame;
     
     return cell;
+}
+
+// delegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    NSLog(@"%ld \n%ld", indexPath.section, indexPath.row);
 }
 
 

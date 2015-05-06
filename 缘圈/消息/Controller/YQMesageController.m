@@ -9,6 +9,8 @@
 #import "YQMesageController.h"
 #import "YQProfileController.h"
 
+#import "TempController.h"
+
 @interface YQMesageController () <UIScrollViewDelegate>
 
 /** 告知按钮 */
@@ -61,8 +63,6 @@
     userV.frame = CGRectMake(kMessageUserVLeftMargin, kMessageUserVTopMargin, self.view.width - 2 * kMessageUserVTopMargin, 100);
     [scrowView addSubview:userV];
     
-    
-#warning TODO: 具体的计算直接拿已封装计算代码
     // 2.订单编号
     UIView *orderNumV = [[UIView alloc] init];
     orderNumV.x = userV.x;
@@ -72,7 +72,6 @@
     orderNumV.backgroundColor = [UIColor redColor];
     
     [scrowView addSubview:orderNumV];
-    
     
     // 3. 按钮
     UIButton *sendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -86,11 +85,6 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - <按钮点击>
 - (void)sendBtnClick
 {
@@ -100,6 +94,9 @@
 - (void)rightBtnClick
 {
     NSLog(@"%s", __func__);
+ 
+//    TempController *tempVc = [[TempController alloc] init];
+//    [self.navigationController pushViewController:tempVc animated:YES];
     
 }
 

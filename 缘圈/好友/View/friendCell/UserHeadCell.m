@@ -38,10 +38,21 @@
         // 容器视图
         UserHeadCellView *subCellview = [[UserHeadCellView alloc] init];
         [self.contentView addSubview:subCellview];
-        
         self.subCellview = subCellview;
+        
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(celldidPan:)]; //TODO: cell滑动呼出二级菜单
+//        [self addGestureRecognizer:pan];
+        
     }
     return self;
+}
+
+
+#pragma mark - 手势代理
+- (void)celldidPan:(UIPanGestureRecognizer *)pan
+{
+    CGPoint point = [pan translationInView:pan.view];
+    NSLog(@"手势坐标 == %f %f", point.x, point.y);
 }
 
 // 传递数据到子view
